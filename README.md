@@ -42,3 +42,46 @@ It is designed for Claude Code / Claude Agent implementation with minimal human 
 ## Small-system production stance
 
 This project is production-ready Phase 1 for fewer than 100 internal users. Keep it modular-monolith-first. The main heavy workload is background resume analysis, so capacity should be handled through Celery scheduling, queue concurrency, and database/index optimization—not through microservices or Kubernetes.
+
+## Local Bootstrap
+
+Task 00 provides only repository scaffolding. It does not implement SmartHire business logic, Kando integration, authentication, screening, ranking, AI analysis, or SQLAdmin configuration.
+
+### Prerequisites
+
+- Docker and Docker Compose.
+- A local `.env` copied from `.env.example`.
+
+### Setup
+
+```bash
+cp .env.example .env
+docker compose config
+docker compose up --build
+```
+
+Services exposed locally:
+
+- Frontend: `http://localhost:3000`
+- Backend: `http://localhost:8000`
+- Backend health check: `http://localhost:8000/healthz`
+- Nginx reverse proxy: `http://localhost:8080`
+
+### Compose Services
+
+The local Compose stack contains:
+
+- `backend`: FastAPI application scaffold.
+- `frontend`: Next.js application scaffold.
+- `postgres`: PostgreSQL database.
+- `redis`: Celery broker/result backend.
+- `celery_worker`: background worker using the backend image.
+- `celery_beat`: scheduler using the backend image.
+- `nginx`: reverse proxy.
+
+### Safety Notes
+
+- Kando is read-only in Phase 1.
+- Do not commit real Kando, AI, JWT, database, or observability secrets.
+- Keep `.env.example` limited to placeholders and safe local defaults.
+- Use Docker Compose and the modular monolith structure; do not add microservices or extra infrastructure for Task 00.
