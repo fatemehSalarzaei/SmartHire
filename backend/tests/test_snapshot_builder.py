@@ -1,4 +1,5 @@
 import json
+from pathlib import Path
 from datetime import datetime, timezone
 from uuid import uuid4
 
@@ -111,8 +112,22 @@ def _base_rows() -> list[object]:
                 "email": "resume@example.com",
             },
         ),
-        _make_row(KandoApplicationSource, kando_application_source_id=1, name="جاب‌ویژن"),
-        _make_row(KandoApplicationSource, kando_application_source_id=2, name="Other"),
+        _make_row(
+            KandoApplicationSource,
+            kando_application_source_id=1,
+            kando_cv_id=9001,
+            name="جاب‌ویژن",
+            cover_letter="I have customer support experience.",
+            total_work_experience_months=24,
+        ),
+        _make_row(
+            KandoApplicationSource,
+            kando_application_source_id=2,
+            kando_cv_id=9999,
+            name="جاب‌ویژن",
+            cover_letter="Unrelated source must not appear.",
+            total_work_experience_months=12,
+        ),
         _make_row(
             KandoCvWorkExperience,
             kando_cv_id=9001,
@@ -202,10 +217,14 @@ def test_snapshot_includes_required_top_level_keys_and_contract_shape() -> None:
 
 def test_snapshot_can_match_expected_fixture_contract_subset() -> None:
     snapshot = _snapshot()
+    fixture_path = Path(__file__).resolve().parents[2] / "tests/fixtures/snapshots/application_snapshot_valid.json"
+    expected = json.loads(fixture_path.read_text())
 
-    assert snapshot["kando"]["application_id"] == 1001
-    assert snapshot["job"]["title"] == "کارشناس پشتیبانی و ارتباط با مشتری"
+    assert snapshot["kando"]["application_id"] == expected["kando"]["application_id"]
+    assert snapshot["job"]["title"] == expected["job"]["title"]
     assert snapshot["candidate"]["full_name"] == "علی نمونه"
+    assert set(snapshot) == set(expected)
+    assert set(snapshot["application_sources"][0]) >= {"source_name", "cv_id", "cover_letter"}
     assert snapshot["language_skills"][0]["language"] == "English"
 
 
@@ -231,7 +250,7 @@ def test_snapshot_list_ordering_is_deterministic() -> None:
         "Customer Success",
         "Customer Support",
     ]
-    assert snapshot["application_sources"][0]["source_name"] == "جابویژن"
+    assert [item["source_name"] for item in snapshot["application_sources"]] == ["جابویژن"]
 
 
 def test_missing_fields_are_captured_without_making_decisions() -> None:
@@ -266,6 +285,25 @@ def test_contact_data_and_raw_payload_are_excluded_from_ai_safe_snapshot() -> No
     assert "CompanyApiKey" not in serialized
 
 
+def test_jalali_birth_date_produces_reasonable_age() -> None:
+    rows = _base_rows()
+    candidate = next(row for row in rows if isinstance(row, KandoCandidate))
+    candidate.payload_json = {"birthDate": "1374-01-01", "city": "تهران"}
+
+    age = _snapshot(rows)["candidate"]["age"]
+
+    assert age is not None
+    assert 25 <= age <= 40
+
+
+def test_impossible_birth_dates_return_none() -> None:
+    rows = _base_rows()
+    candidate = next(row for row in rows if isinstance(row, KandoCandidate))
+    candidate.payload_json = {"birthDate": "2999-01-01", "city": "تهران"}
+
+    assert _snapshot(rows)["candidate"]["age"] is None
+
+
 def test_snapshot_builder_does_not_call_kando_client(monkeypatch) -> None:
     from app.services import kando_client
 
@@ -277,7 +315,35 @@ def test_snapshot_builder_does_not_call_kando_client(monkeypatch) -> None:
     assert _snapshot()["kando"]["application_id"] == 1001
 
 
-def test_application_sources_use_correct_cv_id_and_do_not_use_source_id_as_cv_id() -> None:
+def test_application_sources_use_current_cv_only_and_include_cover_letter() -> None:
+    snapshot = _snapshot()
+
+    assert snapshot["application_sources"] == [
+        {
+            "source_name": "جابویژن",
+            "source_name_normalized": "جابویژن",
+            "cv_id": 9001,
+            "cover_letter": "I have customer support experience.",
+        },
+    ]
+    assert "Unrelated source must not appear." not in json.dumps(snapshot, ensure_ascii=False)
+
+
+def test_application_sources_fallback_to_application_source_name_when_no_cv_specific_row() -> None:
+    rows = [row for row in _base_rows() if not isinstance(row, KandoApplicationSource)]
+    snapshot = _snapshot(rows)
+
+    assert snapshot["application_sources"] == [
+        {
+            "source_name": "جابویژن",
+            "source_name_normalized": "جابویژن",
+            "cv_id": 9001,
+            "cover_letter": None,
+        },
+    ]
+
+
+def test_application_sources_do_not_use_source_id_as_cv_id() -> None:
     snapshot = _snapshot()
 
     assert snapshot["application_sources"][0]["cv_id"] == 9001

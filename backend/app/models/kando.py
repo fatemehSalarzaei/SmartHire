@@ -84,7 +84,10 @@ class KandoApplicationSource(UUIDPrimaryKeyMixin, TimestampMixin, Base):
     )
 
     kando_application_source_id: Mapped[int | None] = mapped_column(Integer)
+    kando_cv_id: Mapped[int | None] = mapped_column(Integer)
     name: Mapped[str] = mapped_column(String(255), nullable=False)
+    cover_letter: Mapped[str | None] = mapped_column(Text)
+    total_work_experience_months: Mapped[int | None] = mapped_column(Integer)
 
 
 class KandoCandidate(UUIDPrimaryKeyMixin, TimestampMixin, Base):

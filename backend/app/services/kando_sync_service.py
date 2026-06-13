@@ -259,7 +259,10 @@ class KandoSyncService:
             source_id,
         )
         source.kando_application_source_id = source_id
+        source.kando_cv_id = _first_int(item, "cvId")
         source.name = _optional_str(item, "name", "sourceName", "jobBoardCompanyName") or "unknown"
+        source.cover_letter = _optional_str(item, "coverLetter")
+        source.total_work_experience_months = _optional_months(item, "totalWorkExperienceTimeSpan")
 
     def _normalize_candidate(self, item: dict[str, Any], raw_payload: KandoRawPayload) -> None:
         candidate_id = _required_int(item, "candidateId")
@@ -393,6 +396,27 @@ def _first_int(item: dict[str, Any], *keys: str) -> int | None:
             return value
     return None
 
+
+
+def _optional_months(item: dict[str, Any], *keys: str) -> int | None:
+    for key in keys:
+        value = item.get(key)
+        if isinstance(value, bool):
+            continue
+        if isinstance(value, int):
+            return value
+        if isinstance(value, str):
+            stripped = value.strip()
+            if not stripped:
+                continue
+            if stripped.isdigit():
+                return int(stripped)
+            # Minimal documented conversion: Persian/English year strings such as "2 سال" or "2 years".
+            number = "".join(ch for ch in stripped if ch.isdigit())
+            lowered = stripped.lower()
+            if number and ("سال" in lowered or "year" in lowered):
+                return int(number) * 12
+    return None
 
 def _optional_str(item: dict[str, Any], *keys: str) -> str | None:
     for key in keys:

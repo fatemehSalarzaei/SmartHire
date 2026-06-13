@@ -240,7 +240,44 @@ def test_sync_service_normalizes_application_sources_with_source_id() -> None:
     sources = [item for item in db.added if isinstance(item, KandoApplicationSource)]
     assert len(sources) == 1
     assert sources[0].kando_application_source_id == 77
+    assert sources[0].kando_cv_id == 123
     assert sources[0].name == "LinkedIn"
+    assert sources[0].cover_letter is None
+
+
+def test_sync_service_normalizes_application_source_contract_fields() -> None:
+    db = FakeDb()
+    service = KandoSyncService(
+        db,
+        FakeKandoClient(
+            [
+                _page(
+                    "application_sources",
+                    "/api/v1/Application/GetApplicationSources",
+                    [
+                        {
+                            "cvId": 9001,
+                            "sourceId": 77,
+                            "jobBoardCompanyName": "جاب‌ویژن",
+                            "coverLetter": "I have customer support experience.",
+                            "totalWorkExperienceTimeSpan": "2 سال",
+                        },
+                    ],
+                ),
+            ],
+        ),
+    )
+
+    processed = service.sync_application_sources()
+
+    assert processed == 1
+    sources = [item for item in db.added if isinstance(item, KandoApplicationSource)]
+    assert len(sources) == 1
+    assert sources[0].kando_application_source_id == 77
+    assert sources[0].kando_cv_id == 9001
+    assert sources[0].name == "جاب‌ویژن"
+    assert sources[0].cover_letter == "I have customer support experience."
+    assert sources[0].total_work_experience_months == 24
 
 
 def test_sync_service_application_sources_do_not_fallback_to_cv_id() -> None:

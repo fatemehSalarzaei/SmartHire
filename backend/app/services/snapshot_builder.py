@@ -156,14 +156,11 @@ class SnapshotBuilder:
         }
 
     def _application_sources(self, application: KandoApplication) -> list[KandoApplicationSource]:
-        source_rows = self._all(select(KandoApplicationSource))
-        if application.source_name:
-            normalized_application_source = self.normalizer.normalize_for_matching(application.source_name)
-            source_rows = [
-                source
-                for source in source_rows
-                if self.normalizer.normalize_for_matching(source.name) == normalized_application_source
-            ] or source_rows
+        if application.kando_cv_id is None:
+            return []
+        source_rows = self._all(
+            select(KandoApplicationSource).where(KandoApplicationSource.kando_cv_id == application.kando_cv_id),
+        )
         return sorted(
             source_rows,
             key=lambda row: (
@@ -182,8 +179,8 @@ class SnapshotBuilder:
                 {
                     "source_name": self.normalizer.normalize_display_text(source.name),
                     "source_name_normalized": self.normalizer.normalize_for_matching(source.name),
-                    "cv_id": application.kando_cv_id,
-                    "cover_letter": None,
+                    "cv_id": source.kando_cv_id,
+                    "cover_letter": self.normalizer.normalize_display_text(source.cover_letter),
                 }
                 for source in sources
             ]
@@ -369,10 +366,48 @@ def _age_from_birth_date(value: str | None) -> int | None:
     except ValueError:
         return None
     today = date.today()
-    if parsed.year < 1900 or parsed > today:
+    if parsed > today and parsed.year >= 1900:
+        return None
+    if 1200 <= parsed.year <= 1600:
+        today_jalali = _gregorian_to_jalali(today)
+        age = today_jalali[0] - parsed.year - (today_jalali[1:] < (parsed.month, parsed.day))
+        return age if 0 <= age <= 120 else None
+    if parsed.year < 1900:
         return None
     age = today.year - parsed.year - ((today.month, today.day) < (parsed.month, parsed.day))
     return age if age >= 0 else None
+
+
+def _gregorian_to_jalali(value: date) -> tuple[int, int, int]:
+    gregorian_days_in_month = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+    jalali_days_in_month = [31, 31, 31, 31, 31, 31, 30, 30, 30, 30, 30, 29]
+
+    gy = value.year - 1600
+    gm = value.month - 1
+    gd = value.day - 1
+
+    g_day_no = 365 * gy + (gy + 3) // 4 - (gy + 99) // 100 + (gy + 399) // 400
+    g_day_no += sum(gregorian_days_in_month[:gm]) + gd
+    if gm > 1 and ((value.year % 4 == 0 and value.year % 100 != 0) or (value.year % 400 == 0)):
+        g_day_no += 1
+
+    j_day_no = g_day_no - 79
+    j_np = j_day_no // 12053
+    j_day_no %= 12053
+
+    jy = 979 + 33 * j_np + 4 * (j_day_no // 1461)
+    j_day_no %= 1461
+
+    if j_day_no >= 366:
+        jy += (j_day_no - 1) // 365
+        j_day_no = (j_day_no - 1) % 365
+
+    jm = 0
+    while jm < 11 and j_day_no >= jalali_days_in_month[jm]:
+        j_day_no -= jalali_days_in_month[jm]
+        jm += 1
+
+    return jy, jm + 1, j_day_no + 1
 
 
 def _datetime_to_iso(value: datetime) -> str:
