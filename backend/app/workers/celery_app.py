@@ -17,3 +17,4 @@ celery_app.conf.update(
 # Import task modules after celery_app exists so workers started from this module
 # register the task names without relying on tests importing sync_tasks directly.
 from app.workers import sync_tasks as sync_tasks  # noqa: E402,F401
+from app.workers import ai_analysis_tasks as ai_analysis_tasks  # noqa: E402,F401
