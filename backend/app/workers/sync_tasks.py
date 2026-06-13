@@ -1,10 +1,13 @@
 from app.db.session import SessionLocal
+from sqlalchemy import select
+
+from app.models.kando import KandoApplication
 from app.services.kando_sync_service import KandoSyncService
 from app.workers.celery_app import celery_app
 
 
 @celery_app.task(name="sync.kando_applications")
-def sync_kando_applications() -> dict[str, int]:
+def sync_kando_applications(enqueue_pipeline: bool = True) -> dict[str, int]:
     with SessionLocal() as db:
         try:
             service = KandoSyncService(db)
@@ -18,6 +21,8 @@ def sync_kando_applications() -> dict[str, int]:
                 "cv_language_skills": service.sync_cv_language_skills(),
             }
             db.commit()
+            if enqueue_pipeline:
+                result["pipeline_enqueued"] = _enqueue_application_pipelines(db)
             return result
         except Exception:
             db.rollback()
@@ -50,3 +55,20 @@ def sync_kando_base_data() -> dict[str, int]:
         except Exception:
             db.rollback()
             raise
+
+
+def _enqueue_application_pipelines(db) -> int:  # noqa: ANN001
+    from app.workers.pipeline_tasks import run_full_pipeline_for_application
+
+    application_ids = db.execute(
+        select(KandoApplication.kando_application_id).order_by(
+            KandoApplication.kando_application_id,
+        ),
+    ).scalars().all()
+    for application_id in application_ids:
+        run_full_pipeline_for_application.apply_async(
+            args=[application_id],
+            kwargs={"force": False, "run_ai": True},
+            queue="default",
+        )
+    return len(application_ids)
