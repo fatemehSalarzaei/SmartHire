@@ -14,3 +14,6 @@ celery_app.conf.update(
     enable_utc=True,
 )
 
+# Import task modules after celery_app exists so workers started from this module
+# register the task names without relying on tests importing sync_tasks directly.
+from app.workers import sync_tasks as sync_tasks  # noqa: E402,F401

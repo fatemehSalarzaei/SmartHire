@@ -4,7 +4,7 @@ from collections.abc import Callable
 from datetime import datetime, timezone
 from typing import Any
 
-from sqlalchemy import select
+from sqlalchemy import delete, select
 from sqlalchemy.orm import Session
 
 from app.core.errors import ErrorCode
@@ -30,6 +30,9 @@ class KandoSyncService:
     def __init__(self, db: Session, client: KandoClient | None = None) -> None:
         self.db = db
         self.client = client or KandoClient()
+        self._replaced_work_experience_cv_ids: set[int] = set()
+        self._replaced_university_degree_cv_ids: set[int] = set()
+        self._replaced_language_skill_cv_ids: set[int] = set()
 
     def sync_jobs(self) -> int:
         return self._sync_paginated(
@@ -74,6 +77,7 @@ class KandoSyncService:
         )
 
     def sync_cv_work_experiences(self) -> int:
+        self._replaced_work_experience_cv_ids = set()
         return self._sync_paginated(
             sync_name="cv_work_experiences",
             fetch_page=self.client.get_cv_work_experiences,
@@ -81,6 +85,7 @@ class KandoSyncService:
         )
 
     def sync_cv_university_degrees(self) -> int:
+        self._replaced_university_degree_cv_ids = set()
         return self._sync_paginated(
             sync_name="cv_university_degrees",
             fetch_page=self.client.get_cv_university_degrees,
@@ -88,6 +93,7 @@ class KandoSyncService:
         )
 
     def sync_cv_language_skills(self) -> int:
+        self._replaced_language_skill_cv_ids = set()
         return self._sync_paginated(
             sync_name="cv_language_skills",
             fetch_page=self.client.get_cv_language_skills,
@@ -141,6 +147,7 @@ class KandoSyncService:
                             "candidateId",
                             "cvId",
                             "hireStepId",
+                            "sourceId",
                             "applicationSourceId",
                         ),
                     )
@@ -253,7 +260,7 @@ class KandoSyncService:
         item: dict[str, Any],
         raw_payload: KandoRawPayload,
     ) -> None:
-        source_id = _first_int(item, "applicationSourceId", "id", "cvId")
+        source_id = _first_int(item, "sourceId", "applicationSourceId", "id")
         if source_id is None:
             raise KandoClientError(code=ErrorCode.KANDO_UNEXPECTED_SCHEMA, retryable=False)
         source = self._get_or_create(
@@ -268,7 +275,11 @@ class KandoSyncService:
         candidate_id = _required_int(item, "candidateId")
         candidate = self._get_or_create(KandoCandidate, KandoCandidate.kando_candidate_id, candidate_id)
         candidate.kando_candidate_id = candidate_id
-        candidate.full_name = _optional_str(item, "fullName", "name")
+        candidate.full_name = _optional_str(item, "fullName", "name") or _join_name_parts(
+            item,
+            "firstName",
+            "lastName",
+        )
         candidate.raw_payload_id = raw_payload.id
 
     def _normalize_cv(self, item: dict[str, Any], raw_payload: KandoRawPayload) -> None:
@@ -283,9 +294,15 @@ class KandoSyncService:
         item: dict[str, Any],
         raw_payload: KandoRawPayload,
     ) -> None:
+        kando_cv_id = _required_int(item, "cvId")
+        self._delete_cv_children_once(
+            KandoCvWorkExperience,
+            kando_cv_id,
+            self._replaced_work_experience_cv_ids,
+        )
         self.db.add(
             KandoCvWorkExperience(
-                kando_cv_id=_required_int(item, "cvId"),
+                kando_cv_id=kando_cv_id,
                 cv_id=self._cv_internal_id(item),
                 title=_optional_str(item, "roleTitle", "title"),
                 company_name=_optional_str(item, "companyName"),
@@ -298,9 +315,15 @@ class KandoSyncService:
         item: dict[str, Any],
         raw_payload: KandoRawPayload,
     ) -> None:
+        kando_cv_id = _required_int(item, "cvId")
+        self._delete_cv_children_once(
+            KandoCvUniversityDegree,
+            kando_cv_id,
+            self._replaced_university_degree_cv_ids,
+        )
         self.db.add(
             KandoCvUniversityDegree(
-                kando_cv_id=_required_int(item, "cvId"),
+                kando_cv_id=kando_cv_id,
                 cv_id=self._cv_internal_id(item),
                 degree_name=_optional_str(item, "degreeName", "academicFieldName"),
                 university_name=_optional_str(item, "universityName"),
@@ -313,9 +336,15 @@ class KandoSyncService:
         item: dict[str, Any],
         raw_payload: KandoRawPayload,
     ) -> None:
+        kando_cv_id = _required_int(item, "cvId")
+        self._delete_cv_children_once(
+            KandoCvLanguageSkill,
+            kando_cv_id,
+            self._replaced_language_skill_cv_ids,
+        )
         self.db.add(
             KandoCvLanguageSkill(
-                kando_cv_id=_required_int(item, "cvId"),
+                kando_cv_id=kando_cv_id,
                 cv_id=self._cv_internal_id(item),
                 language_id=_first_int(item, "languageId"),
                 skill_level_id=_first_int(item, "skillLevelId"),
@@ -346,6 +375,12 @@ class KandoSyncService:
         cv = self.db.execute(select(KandoCv).where(KandoCv.kando_cv_id == cv_id)).scalar_one_or_none()
         return cv.id if cv is not None else None
 
+    def _delete_cv_children_once(self, model_class, kando_cv_id: int, replaced_cv_ids: set[int]) -> None:
+        if kando_cv_id in replaced_cv_ids:
+            return
+        self.db.execute(delete(model_class).where(model_class.kando_cv_id == kando_cv_id))
+        replaced_cv_ids.add(kando_cv_id)
+
     def _get_or_create(self, model_class, column, value):
         instance = self.db.execute(select(model_class).where(column == value)).scalar_one_or_none()
         if instance is None:
@@ -375,3 +410,9 @@ def _optional_str(item: dict[str, Any], *keys: str) -> str | None:
         if isinstance(value, str):
             return value
     return None
+
+
+def _join_name_parts(item: dict[str, Any], *keys: str) -> str | None:
+    parts = [_optional_str(item, key) for key in keys]
+    full_name = " ".join(part for part in parts if part)
+    return full_name or None
