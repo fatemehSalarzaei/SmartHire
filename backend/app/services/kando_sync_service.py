@@ -139,17 +139,7 @@ class KandoSyncService:
                     raw_payload = self._persist_raw_payload(
                         source=sync_name,
                         item=item,
-                        external_id=_first_int(
-                            item,
-                            "id",
-                            "jobId",
-                            "applicationId",
-                            "candidateId",
-                            "cvId",
-                            "hireStepId",
-                            "sourceId",
-                            "applicationSourceId",
-                        ),
+                        external_id=_raw_payload_external_id(sync_name, item),
                     )
                     normalize_item(item, raw_payload)
                     processed += 1
@@ -410,6 +400,22 @@ def _optional_str(item: dict[str, Any], *keys: str) -> str | None:
         if isinstance(value, str):
             return value
     return None
+
+
+def _raw_payload_external_id(sync_name: str, item: dict[str, Any]) -> int | None:
+    if sync_name == "application_sources":
+        return _first_int(item, "sourceId", "applicationSourceId", "id")
+    return _first_int(
+        item,
+        "id",
+        "jobId",
+        "applicationId",
+        "candidateId",
+        "cvId",
+        "hireStepId",
+        "sourceId",
+        "applicationSourceId",
+    )
 
 
 def _join_name_parts(item: dict[str, Any], *keys: str) -> str | None:

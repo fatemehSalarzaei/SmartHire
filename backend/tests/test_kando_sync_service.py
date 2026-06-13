@@ -225,7 +225,7 @@ def test_sync_service_normalizes_application_sources_with_source_id() -> None:
                 _page(
                     "application_sources",
                     "/api/v1/Application/GetApplicationSources",
-                    [{"sourceId": 77, "sourceName": "LinkedIn"}],
+                    [{"cvId": 123, "sourceId": 77, "sourceName": "LinkedIn"}],
                 ),
             ],
         ),
@@ -236,6 +236,7 @@ def test_sync_service_normalizes_application_sources_with_source_id() -> None:
     assert processed == 1
     raw_payloads = [item for item in db.added if isinstance(item, KandoRawPayload)]
     assert raw_payloads[0].external_id == 77
+    assert raw_payloads[0].external_id != 123
     sources = [item for item in db.added if isinstance(item, KandoApplicationSource)]
     assert len(sources) == 1
     assert sources[0].kando_application_source_id == 77
