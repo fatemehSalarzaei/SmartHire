@@ -10,14 +10,14 @@ logs:
 	docker compose logs -f
 
 backend-test:
-	docker compose exec backend pytest
+	docker compose run --rm --no-deps backend pytest
 
 frontend-test:
 	docker compose exec frontend npm test
 
 lint:
-	docker compose exec backend ruff check app tests
-	docker compose exec frontend npm run lint
+	docker compose run --rm --no-deps backend ruff check app tests
+	docker compose run --rm --no-deps frontend npm run lint
 
 migrate:
 	docker compose exec backend alembic upgrade head

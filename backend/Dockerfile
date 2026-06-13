@@ -5,10 +5,16 @@ ENV PYTHONUNBUFFERED=1
 
 WORKDIR /app
 
+ARG INSTALL_DEV=false
+
 COPY pyproject.toml ./
 COPY app ./app
 RUN pip install --no-cache-dir --upgrade pip \
-    && pip install --no-cache-dir -e .
+    && if [ "$INSTALL_DEV" = "true" ]; then \
+        pip install --no-cache-dir -e ".[dev]"; \
+    else \
+        pip install --no-cache-dir -e .; \
+    fi
 
 COPY tests ./tests
 

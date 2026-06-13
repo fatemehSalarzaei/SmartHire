@@ -28,6 +28,8 @@ services:
   backend:
     build:
       context: ./backend
+      args:
+        INSTALL_DEV: "true"
     image: smarthire-backend:local
     env_file:
       - path: .env.example

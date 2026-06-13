@@ -4,6 +4,7 @@ version = "0.1.0"
 description = "SmartHire FastAPI backend scaffold"
 requires-python = ">=3.12"
 dependencies = [
+  "alembic>=1.14,<2.0",
   "celery[redis]>=5.4,<6.0",
   "fastapi>=0.115,<1.0",
   "pydantic-settings>=2.6,<3.0",

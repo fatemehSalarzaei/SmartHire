@@ -3,6 +3,7 @@ ENVIRONMENT=local
 APP_NAME=SmartHire
 APP_TIMEZONE=Asia/Tehran
 BACKEND_CORS_ORIGINS=http://localhost:3000
+NEXT_PUBLIC_API_BASE_URL=http://localhost:8000/api/v1
 
 # Database
 POSTGRES_DB=smarthire
