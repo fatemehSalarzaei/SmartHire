@@ -1,5 +1,6 @@
 from functools import lru_cache
 
+from pydantic import Field
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
@@ -20,6 +21,22 @@ class Settings(BaseSettings):
     jwt_secret_key: str = "change_me_very_long_random"
     jwt_algorithm: str = "HS256"
     access_token_expire_minutes: int = 60
+    kando_ats_base_url: str = "https://atsedgeapi.hrcando.ir"
+    kando_basedata_base_url: str = "https://basedataapinew.hrcando.ir"
+    kando_company_api_key: str = Field(
+        default="replace_with_secret",
+        validation_alias="KANDO_API_KEY",
+    )
+    kando_company_api_header_name: str = Field(
+        default="CompanyApiKey",
+        validation_alias="KANDO_API_HEADER_KEY",
+    )
+    kando_request_timeout_seconds: float = Field(
+        default=30.0,
+        validation_alias="KANDO_TIMEOUT_SECONDS",
+    )
+    kando_page_size: int = Field(default=100, validation_alias="KANDO_DEFAULT_PAGE_SIZE")
+    kando_max_retries: int = 3
 
     model_config = SettingsConfigDict(env_file=".env", extra="ignore")
 
