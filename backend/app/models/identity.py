@@ -14,6 +14,7 @@ class User(UUIDPrimaryKeyMixin, TimestampMixin, Base):
 
     email: Mapped[str] = mapped_column(String(255), nullable=False, unique=True)
     full_name: Mapped[str | None] = mapped_column(String(255))
+    password_hash: Mapped[str | None] = mapped_column(Text)
     is_active: Mapped[bool] = mapped_column(Boolean, nullable=False, default=True)
     last_login_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True))
 
@@ -79,4 +80,3 @@ class RolePermission(TimestampMixin, Base):
 
     role: Mapped[Role] = relationship(back_populates="permissions")
     permission: Mapped[Permission] = relationship(back_populates="roles")
-

@@ -88,6 +88,8 @@ def register_exception_handlers(app: Any) -> None:
 
 
 def _code_for_http_status(status_code: int) -> str:
+    if status_code == status.HTTP_401_UNAUTHORIZED:
+        return ErrorCode.UNAUTHENTICATED
     if status_code == status.HTTP_403_FORBIDDEN:
         return ErrorCode.PERMISSION_DENIED
     if status_code == status.HTTP_404_NOT_FOUND:

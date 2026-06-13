@@ -4,6 +4,9 @@ from typing import Any
 
 class ErrorCode(StrEnum):
     VALIDATION_ERROR = "VALIDATION_ERROR"
+    UNAUTHENTICATED = "UNAUTHENTICATED"
+    INVALID_CREDENTIALS = "INVALID_CREDENTIALS"
+    TOKEN_EXPIRED = "TOKEN_EXPIRED"
     PERMISSION_DENIED = "PERMISSION_DENIED"
     INTERNAL_ERROR = "INTERNAL_ERROR"
     NOT_FOUND = "NOT_FOUND"
@@ -11,6 +14,9 @@ class ErrorCode(StrEnum):
 
 ERROR_MESSAGES_FA: dict[str, str] = {
     ErrorCode.VALIDATION_ERROR: "داده‌های ارسالی معتبر نیستند. لطفاً موارد مشخص‌شده را اصلاح کنید.",
+    ErrorCode.UNAUTHENTICATED: "برای دسترسی به این بخش ابتدا وارد شوید.",
+    ErrorCode.INVALID_CREDENTIALS: "ایمیل یا رمز عبور نادرست است.",
+    ErrorCode.TOKEN_EXPIRED: "نشست شما منقضی شده است. لطفاً دوباره وارد شوید.",
     ErrorCode.PERMISSION_DENIED: "شما دسترسی لازم برای انجام این عملیات را ندارید.",
     ErrorCode.INTERNAL_ERROR: "خطای داخلی رخ داد. لطفاً بعداً دوباره تلاش کنید یا با پشتیبانی تماس بگیرید.",
     ErrorCode.NOT_FOUND: "منبع مورد نظر پیدا نشد.",
@@ -19,6 +25,9 @@ ERROR_MESSAGES_FA: dict[str, str] = {
 
 ERROR_RETRYABLE: dict[str, bool] = {
     ErrorCode.VALIDATION_ERROR: False,
+    ErrorCode.UNAUTHENTICATED: False,
+    ErrorCode.INVALID_CREDENTIALS: False,
+    ErrorCode.TOKEN_EXPIRED: False,
     ErrorCode.PERMISSION_DENIED: False,
     ErrorCode.INTERNAL_ERROR: True,
     ErrorCode.NOT_FOUND: False,
@@ -48,4 +57,3 @@ class AppError(Exception):
 
 def message_fa_for_code(code: str) -> str:
     return ERROR_MESSAGES_FA.get(code, ERROR_MESSAGES_FA[ErrorCode.INTERNAL_ERROR])
-

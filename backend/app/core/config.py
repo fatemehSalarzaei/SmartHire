@@ -17,6 +17,9 @@ class Settings(BaseSettings):
     mask_sensitive_logs: bool = True
     enable_sqladmin: bool = True
     sqladmin_path: str = "/admin"
+    jwt_secret_key: str = "change_me_very_long_random"
+    jwt_algorithm: str = "HS256"
+    access_token_expire_minutes: int = 60
 
     model_config = SettingsConfigDict(env_file=".env", extra="ignore")
 
