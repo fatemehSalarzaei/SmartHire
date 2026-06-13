@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "titleEn": "Advanced",
+    "titleFa": "پیشرفته"
+  },
+  {
+    "id": 2,
+    "titleEn": "Intermediate",
+    "titleFa": "متوسط"
+  },
+  {
+    "id": 3,
+    "titleEn": "Beginner",
+    "titleFa": "ضعیف"
+  }
+]

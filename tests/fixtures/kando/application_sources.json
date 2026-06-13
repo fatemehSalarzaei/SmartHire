@@ -1,0 +1,29 @@
+[
+  {
+    "applicationId": 1001,
+    "sourceId": 1,
+    "cvId": 9001,
+    "coverLetter": "I have customer support experience.",
+    "jobBoardCompanyName": "جاب‌ویژن",
+    "receivedApplicationId": "JV-1001",
+    "totalWorkExperienceTimeSpan": "2 سال"
+  },
+  {
+    "applicationId": 1002,
+    "sourceId": 1,
+    "cvId": 9002,
+    "coverLetter": "",
+    "jobBoardCompanyName": "جاب‌ویژن",
+    "receivedApplicationId": "JV-1002",
+    "totalWorkExperienceTimeSpan": "0"
+  },
+  {
+    "applicationId": 1003,
+    "sourceId": 99,
+    "cvId": null,
+    "coverLetter": "",
+    "jobBoardCompanyName": "نامشخص",
+    "receivedApplicationId": "X-1003",
+    "totalWorkExperienceTimeSpan": null
+  }
+]

@@ -1,0 +1,37 @@
+# Frontend Folder Structure
+
+```text
+frontend/
+  app/
+    (auth)/
+      login/
+    (dashboard)/
+      dashboard/
+      jobs/
+      jobs/[jobId]/
+      jobs/[jobId]/rulesets/
+      jobs/[jobId]/applications/
+      applications/[applicationId]/
+      screening-runs/
+      ranking/
+      settings/
+  components/
+    layout/
+    tables/
+    forms/
+    rule-builder/
+    applications/
+    ai-analysis/
+    notes/
+    common/
+  lib/
+    api-client.ts
+    auth.ts
+    permissions.ts
+    routes.ts
+    query-keys.ts
+    formatters.ts
+  hooks/
+  types/
+  tests/
+```

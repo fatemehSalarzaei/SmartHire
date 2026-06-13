@@ -1,0 +1,5 @@
+{
+  "error_code": "AI_ANALYSIS_UNAVAILABLE",
+  "message_fa": "تحلیل هوش مصنوعی در حال حاضر در دسترس نیست. رزومه با قوانین ساختاریافته بررسی شد.",
+  "retryable": true
+}

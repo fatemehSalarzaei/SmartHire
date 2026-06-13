@@ -1,0 +1,30 @@
+[
+  {
+    "kando_application_id": 1001,
+    "decision": "SMART_NOT_REJECTED",
+    "main_reasons": [
+      "زبان انگلیسی پیشرفته",
+      "سابقه مرتبط پشتیبانی مشتری"
+    ],
+    "missing_fields": []
+  },
+  {
+    "kando_application_id": 1002,
+    "decision": "SMART_REJECTED",
+    "main_reasons": [
+      "سن خارج از بازه مجاز است",
+      "سطح زبان انگلیسی کافی نیست"
+    ],
+    "missing_fields": []
+  },
+  {
+    "kando_application_id": 1003,
+    "decision": "UNSUPPORTED_SOURCE",
+    "main_reasons": [
+      "رزومه ساختاریافته یا cvId قابل دریافت نیست"
+    ],
+    "missing_fields": [
+      "kando.cv_id"
+    ]
+  }
+]

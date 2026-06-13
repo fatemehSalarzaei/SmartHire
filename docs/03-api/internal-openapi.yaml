@@ -1,0 +1,155 @@
+openapi: 3.0.3
+info:
+  title: SmartHire Internal API
+  version: "1.0.0"
+  description: Production-ready Phase 1 internal API for SmartHire.
+servers:
+  - url: /api/v1
+paths:
+  /auth/login:
+    post:
+      summary: Login
+      responses:
+        "200":
+          description: Auth token
+        "401":
+          $ref: "#/components/responses/Error"
+  /me:
+    get:
+      summary: Current user
+      responses:
+        "200":
+          description: Current user profile
+  /jobs:
+    get:
+      summary: List Kando jobs cached in SmartHire
+      parameters:
+        - $ref: "#/components/parameters/Page"
+        - $ref: "#/components/parameters/PageSize"
+        - $ref: "#/components/parameters/Search"
+      responses:
+        "200":
+          description: Paginated jobs
+  /jobs/{job_id}:
+    get:
+      summary: Get job detail
+      parameters:
+        - name: job_id
+          in: path
+          required: true
+          schema: { type: string }
+      responses:
+        "200": { description: Job detail }
+        "404": { $ref: "#/components/responses/Error" }
+  /rulesets:
+    get:
+      summary: List rulesets
+      responses: { "200": { description: List } }
+    post:
+      summary: Create draft ruleset
+      responses: { "201": { description: Created }, "400": { $ref: "#/components/responses/Error" } }
+  /rulesets/{ruleset_id}/activate:
+    post:
+      summary: Activate a ruleset version and trigger automatic rescreening
+      responses: { "200": { description: Activated }, "409": { $ref: "#/components/responses/Error" } }
+  /applications:
+    get:
+      summary: List applications for recruiter queues
+      parameters:
+        - $ref: "#/components/parameters/Page"
+        - $ref: "#/components/parameters/PageSize"
+        - name: status
+          in: query
+          schema: { $ref: "#/components/schemas/InternalStatus" }
+        - name: priority_bucket
+          in: query
+          schema: { $ref: "#/components/schemas/PriorityBucket" }
+        - name: sort
+          in: query
+          schema: { type: string, example: "-priority_score" }
+      responses:
+        "200": { description: Paginated applications }
+  /applications/{application_id}:
+    get:
+      summary: Application detail including decision, score, AI analysis and notes
+      responses:
+        "200": { description: Application detail }
+        "404": { $ref: "#/components/responses/Error" }
+  /applications/{application_id}/notes:
+    get:
+      summary: List internal notes
+      responses: { "200": { description: Notes } }
+    post:
+      summary: Create recruiter note
+      responses: { "201": { description: Created }, "400": { $ref: "#/components/responses/Error" } }
+  /applications/{application_id}/recruiter-decision:
+    post:
+      summary: Store recruiter decision
+      responses: { "201": { description: Created }, "400": { $ref: "#/components/responses/Error" } }
+  /applications/{application_id}/ai-analysis:
+    get:
+      summary: Get AI analysis for application
+      responses: { "200": { description: AI analysis } }
+  /screening/automation/status:
+    get:
+      summary: Automatic pipeline status
+      responses: { "200": { description: Status } }
+  /screening/runs:
+    get:
+      summary: List screening runs
+      responses: { "200": { description: Runs } }
+  /screening/runs/{run_id}/retry:
+    post:
+      summary: Admin-only retry failed run
+      responses: { "202": { description: Retry scheduled }, "403": { $ref: "#/components/responses/Error" } }
+  /admin/kando/test-connection:
+    post:
+      summary: Admin-only test Kando connection
+      responses: { "200": { description: Test result }, "400": { $ref: "#/components/responses/Error" } }
+
+components:
+  parameters:
+    Page:
+      name: page
+      in: query
+      schema: { type: integer, minimum: 1, default: 1 }
+    PageSize:
+      name: page_size
+      in: query
+      schema: { type: integer, minimum: 1, maximum: 100, default: 25 }
+    Search:
+      name: q
+      in: query
+      schema: { type: string }
+  responses:
+    Error:
+      description: Error response
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/ErrorResponse"
+  schemas:
+    ErrorResponse:
+      type: object
+      required: [success, error]
+      properties:
+        success:
+          type: boolean
+          example: false
+        error:
+          type: object
+          required: [code, message_fa, retryable]
+          properties:
+            code: { type: string }
+            message_fa: { type: string }
+            field_errors:
+              type: object
+              additionalProperties: { type: array, items: { type: string } }
+            retryable: { type: boolean }
+            request_id: { type: string }
+    InternalStatus:
+      type: string
+      enum: [NOT_REVIEWED, SMART_REJECTED, SMART_NOT_REJECTED, NEEDS_HUMAN_REVIEW, UNSUPPORTED_SOURCE, ERROR, SYNC_ERROR]
+    PriorityBucket:
+      type: string
+      enum: [HIGH, MEDIUM, LOW, REVIEW_UNKNOWN]

@@ -1,0 +1,20 @@
+[
+  {
+    "cvId": 9001,
+    "roleTitle": "Customer Support Specialist",
+    "companyName": "Example SaaS",
+    "industryId": 10,
+    "jobCategoryId": 20,
+    "achievementsDescription": "Handled customer tickets and calls.",
+    "durationMonths": 24
+  },
+  {
+    "cvId": 9002,
+    "roleTitle": "Intern",
+    "companyName": "Example",
+    "industryId": 10,
+    "jobCategoryId": 99,
+    "achievementsDescription": "General internship.",
+    "durationMonths": 3
+  }
+]

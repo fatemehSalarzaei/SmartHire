@@ -1,0 +1,12 @@
+[
+  {
+    "cvId": 9001,
+    "languageId": 1,
+    "skillLevelId": 1
+  },
+  {
+    "cvId": 9002,
+    "languageId": 1,
+    "skillLevelId": 3
+  }
+]

@@ -1,0 +1,14 @@
+[
+  {
+    "kando_application_id": 1001,
+    "priority_score": 85,
+    "priority_bucket": "HIGH",
+    "rank_in_job": 1
+  },
+  {
+    "kando_application_id": 1004,
+    "priority_score": null,
+    "priority_bucket": "REVIEW_UNKNOWN",
+    "rank_in_job": null
+  }
+]

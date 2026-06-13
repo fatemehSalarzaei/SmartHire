@@ -1,0 +1,37 @@
+{
+  "summary_fa": "کاندیدا سابقه پشتیبانی مشتری و مهارت زبان انگلیسی پیشرفته دارد.",
+  "related_experience": {
+    "is_related": true,
+    "confidence": 0.82,
+    "matched_categories": [
+      "customer_support",
+      "sales"
+    ],
+    "evidence": [
+      "عنوان شغلی شامل Customer Support است"
+    ]
+  },
+  "positive_signals": [
+    {
+      "code": "SUPPORT_EXPERIENCE",
+      "label_fa": "سابقه پشتیبانی مشتری",
+      "confidence": 0.86,
+      "evidence": "Customer Support Specialist"
+    }
+  ],
+  "negative_signals": [],
+  "ambiguities": [
+    {
+      "code": "UNCLEAR_DURATION",
+      "label_fa": "مدت سابقه کاری دقیق نیست",
+      "severity": "LOW"
+    }
+  ],
+  "suggested_score_reasons": [
+    {
+      "reason_code": "RELATED_SUPPORT_EXPERIENCE",
+      "suggested_score_delta": 15,
+      "explanation_fa": "سابقه مرتبط با پشتیبانی مشتری شناسایی شد"
+    }
+  ]
+}

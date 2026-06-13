@@ -1,0 +1,8 @@
+# .codex/config.toml
+
+# Keep project guidance compact but allow enough room for root + nested AGENTS files.
+project_doc_max_bytes = 65536
+
+# Fallback only helps if AGENTS.md is absent in a directory.
+# Root AGENTS.md remains the primary Codex instruction file.
+project_doc_fallback_filenames = ["CLAUDE.md"]

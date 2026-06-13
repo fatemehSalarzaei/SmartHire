@@ -1,0 +1,56 @@
+# Environment
+ENVIRONMENT=local
+APP_NAME=SmartHire
+APP_TIMEZONE=Asia/Tehran
+BACKEND_CORS_ORIGINS=http://localhost:3000
+
+# Database
+POSTGRES_DB=smarthire
+POSTGRES_USER=smarthire
+POSTGRES_PASSWORD=change_me
+DATABASE_URL=postgresql+psycopg://smarthire:change_me@postgres:5432/smarthire
+
+# Redis / Celery
+REDIS_URL=redis://redis:6379/0
+CELERY_BROKER_URL=redis://redis:6379/1
+CELERY_RESULT_BACKEND=redis://redis:6379/2
+
+# Auth
+JWT_SECRET_KEY=change_me_very_long_random
+JWT_ALGORITHM=HS256
+ACCESS_TOKEN_EXPIRE_MINUTES=60
+REFRESH_TOKEN_EXPIRE_DAYS=7
+
+# Kando - Read-only integration
+KANDO_ATS_BASE_URL=https://atsedgeapi.hrcando.ir
+KANDO_BASEDATA_BASE_URL=https://basedataapinew.hrcando.ir
+KANDO_API_HEADER_KEY=CompanyApiKey
+KANDO_API_KEY=replace_with_secret
+KANDO_DEFAULT_PAGE_SIZE=100
+KANDO_TIMEOUT_SECONDS=30
+KANDO_MAX_RETRIES=3
+KANDO_SYNC_APPLICATIONS_CRON=*/30 * * * *
+KANDO_SYNC_BASEDATA_CRON=0 2 * * *
+
+# AI Analysis
+AI_ANALYSIS_ENABLED=false
+AI_PROVIDER=openai_compatible
+AI_API_BASE_URL=
+AI_API_KEY=
+AI_MODEL_NAME=
+AI_TIMEOUT_SECONDS=60
+AI_MAX_RETRIES=2
+AI_PROMPT_VERSION=v1
+AI_MIN_CONFIDENCE=0.70
+AI_STORE_RAW_OUTPUT=true
+
+# Security / Privacy
+MASK_SENSITIVE_LOGS=true
+ALLOW_RAW_PAYLOAD_VIEW=false
+ENABLE_SQLADMIN=true
+SQLADMIN_PATH=/admin
+
+# Observability
+LOG_LEVEL=INFO
+SENTRY_DSN=
+PROMETHEUS_ENABLED=true

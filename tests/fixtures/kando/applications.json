@@ -1,0 +1,32 @@
+[
+  {
+    "applicationId": 1001,
+    "candidateId": 501,
+    "jobId": 2001,
+    "hireStepId": 3,
+    "statusId": 5,
+    "rejectTime": null,
+    "rejectionReasonId": null,
+    "needToMerge": false
+  },
+  {
+    "applicationId": 1002,
+    "candidateId": 502,
+    "jobId": 2001,
+    "hireStepId": 3,
+    "statusId": 5,
+    "rejectTime": null,
+    "rejectionReasonId": null,
+    "needToMerge": false
+  },
+  {
+    "applicationId": 1003,
+    "candidateId": 503,
+    "jobId": 2001,
+    "hireStepId": 3,
+    "statusId": 5,
+    "rejectTime": null,
+    "rejectionReasonId": null,
+    "needToMerge": true
+  }
+]

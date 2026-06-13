@@ -1,0 +1,22 @@
+# .codex/rules/default.rules
+
+# Prompt before commands that may modify Git history.
+prefix_rule(
+    pattern = ["git", ["push", "reset", "rebase"]],
+    decision = "prompt",
+    justification = "Git history or remote changes require human approval.",
+)
+
+# Prompt before installing dependencies.
+prefix_rule(
+    pattern = [["npm", "pnpm", "yarn", "pip"], ["install", "add"]],
+    decision = "prompt",
+    justification = "New dependencies require review before being added.",
+)
+
+# Prompt before Docker Compose destructive operations.
+prefix_rule(
+    pattern = ["docker", "compose", ["down", "rm"]],
+    decision = "prompt",
+    justification = "Destructive container operations require approval.",
+)

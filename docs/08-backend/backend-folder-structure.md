@@ -1,0 +1,65 @@
+# Backend Folder Structure
+
+```text
+backend/
+  app/
+    main.py
+    core/
+      config.py
+      security.py
+      logging.py
+      exceptions.py
+      error_codes.py
+      permissions.py
+    db/
+      session.py
+      base.py
+      seed.py
+    models/
+      ...
+    schemas/
+      ...
+    api/
+      deps.py
+      v1/
+        auth.py
+        jobs.py
+        applications.py
+        rulesets.py
+        screening.py
+        ranking.py
+        ai_analysis.py
+        notes.py
+        admin_tools.py
+    services/
+      kando_client.py
+      kando_sync_service.py
+      snapshot_builder.py
+      normalization_service.py
+      llm_client.py
+      prompt_builder.py
+      ai_analysis_service.py
+      rule_engine.py
+      ranking_engine.py
+      note_generator.py
+      audit_service.py
+      permission_service.py
+    workers/
+      celery_app.py
+      sync_tasks.py
+      ai_analysis_tasks.py
+      screening_tasks.py
+      ranking_tasks.py
+      maintenance_tasks.py
+    admin/
+      setup.py
+      auth.py
+      views.py
+    tests/
+      unit/
+      integration/
+      fixtures/
+  alembic/
+  pyproject.toml
+  Dockerfile
+```

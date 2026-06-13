@@ -1,0 +1,147 @@
+{
+  "name": "Customer Support Screening With AI Signals",
+  "version": 1,
+  "kando_job_id": 2001,
+  "default_missing_data_policy": "NEEDS_REVIEW",
+  "scoring_enabled": true,
+  "max_score": 100,
+  "groups": [
+    {
+      "name": "Required gates",
+      "group_type": "GATE",
+      "logic": "ALL",
+      "priority": 1,
+      "rules": [
+        {
+          "name": "Age must be 22-35",
+          "rule_type": "REJECT_GATE",
+          "target_entity": "candidate",
+          "target_fields": [
+            "age"
+          ],
+          "operator": "NOT_BETWEEN",
+          "values": [
+            22,
+            35
+          ],
+          "reason_template": "سن خارج از بازه مجاز است",
+          "on_missing_policy": "NEEDS_REVIEW"
+        },
+        {
+          "name": "English must be Advanced",
+          "rule_type": "PASS_GATE",
+          "target_entity": "language",
+          "target_fields": [
+            "english_level"
+          ],
+          "operator": "EQUALS",
+          "values": [
+            "Advanced"
+          ],
+          "reason_template": "زبان انگلیسی پیشرفته",
+          "on_missing_policy": "NEEDS_REVIEW"
+        }
+      ]
+    },
+    {
+      "name": "Related experience",
+      "group_type": "OVERRIDE",
+      "logic": "ANY",
+      "priority": 2,
+      "rules": [
+        {
+          "name": "Customer support experience",
+          "rule_type": "PASS_GATE",
+          "target_entity": "work",
+          "target_fields": [
+            "role_title",
+            "description",
+            "job_category"
+          ],
+          "operator": "CONTAINS_ANY",
+          "values": [
+            "Customer Support",
+            "پشتیبانی",
+            "Customer Service"
+          ],
+          "reason_template": "سابقه مرتبط پشتیبانی مشتری",
+          "score_delta": 25
+        }
+      ]
+    },
+    {
+      "name": "Scoring",
+      "group_type": "SCORING",
+      "logic": "ANY",
+      "priority": 3,
+      "rules": [
+        {
+          "name": "English Advanced bonus",
+          "rule_type": "SCORE_BONUS",
+          "target_entity": "language",
+          "target_fields": [
+            "english_level"
+          ],
+          "operator": "EQUALS",
+          "values": [
+            "Advanced"
+          ],
+          "score_delta": 20,
+          "reason_template": "زبان انگلیسی پیشرفته"
+        },
+        {
+          "name": "Target university bonus",
+          "rule_type": "SCORE_BONUS",
+          "target_entity": "education",
+          "target_fields": [
+            "university_name"
+          ],
+          "operator": "FUZZY_IN",
+          "values": [
+            "دانشگاه تهران",
+            "دانشگاه صنعتی شریف"
+          ],
+          "score_delta": 15,
+          "reason_template": "دانشگاه هدف"
+        },
+        {
+          "name": "Target field bonus",
+          "rule_type": "SCORE_BONUS",
+          "target_entity": "education",
+          "target_fields": [
+            "field_name"
+          ],
+          "operator": "FUZZY_IN",
+          "values": [
+            "زبان انگلیسی",
+            "بازرگانی بین‌الملل"
+          ],
+          "score_delta": 20,
+          "reason_template": "رشته تحصیلی مرتبط"
+        }
+      ]
+    },
+    {
+      "name": "AI signals",
+      "group_type": "SCORING",
+      "logic": "ANY",
+      "priority": 4,
+      "rules": [
+        {
+          "name": "AI related support signal",
+          "rule_type": "SCORE_BONUS",
+          "target_entity": "ai",
+          "target_fields": [
+            "positive_signals.code"
+          ],
+          "operator": "IN",
+          "values": [
+            "SUPPORT_EXPERIENCE"
+          ],
+          "score_delta": 10,
+          "reason_template": "سیگنال هوش مصنوعی: سابقه پشتیبانی"
+        }
+      ]
+    }
+  ]
+}

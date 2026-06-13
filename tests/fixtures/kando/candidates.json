@@ -1,0 +1,29 @@
+[
+  {
+    "candidateId": 501,
+    "firstName": "علی",
+    "lastName": "نمونه",
+    "birthDate": "1374-01-01",
+    "email": "ali@example.com",
+    "mobile": "09123456789",
+    "cityId": 1
+  },
+  {
+    "candidateId": 502,
+    "firstName": "سارا",
+    "lastName": "نمونه",
+    "birthDate": "1386-01-01",
+    "email": "sara@example.com",
+    "mobile": "09120000000",
+    "cityId": 1
+  },
+  {
+    "candidateId": 503,
+    "firstName": "رضا",
+    "lastName": "نامشخص",
+    "birthDate": null,
+    "email": null,
+    "mobile": null,
+    "cityId": null
+  }
+]

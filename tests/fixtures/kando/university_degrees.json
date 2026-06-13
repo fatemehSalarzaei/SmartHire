@@ -1,0 +1,16 @@
+[
+  {
+    "cvId": 9001,
+    "universityName": "دانشگاه تهران",
+    "academicFieldId": 301,
+    "degreeLevelId": 1,
+    "gpa": 17.2
+  },
+  {
+    "cvId": 9002,
+    "universityName": "دانشگاه دیگر",
+    "academicFieldId": 999,
+    "degreeLevelId": 1,
+    "gpa": 15.0
+  }
+]

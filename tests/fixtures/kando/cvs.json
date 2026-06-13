@@ -1,0 +1,20 @@
+[
+  {
+    "cvId": 9001,
+    "candidateId": 501,
+    "aboutMe": "Customer support specialist with English fluency.",
+    "skills": [
+      "CRM",
+      "English",
+      "Customer Support"
+    ]
+  },
+  {
+    "cvId": 9002,
+    "candidateId": 502,
+    "aboutMe": "Beginner candidate.",
+    "skills": [
+      "Communication"
+    ]
+  }
+]

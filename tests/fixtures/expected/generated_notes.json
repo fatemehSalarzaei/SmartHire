@@ -1,0 +1,19 @@
+[
+  {
+    "kando_application_id": 1001,
+    "note_type": "AI_SCREENING_NOTE",
+    "contains": [
+      "بررسی خودکار توسط دستیار SmartHire انجام شد",
+      "نتیجه: رزومه طبق قوانین فعلی رد نشد",
+      "امتیاز اولویت"
+    ]
+  },
+  {
+    "kando_application_id": 1002,
+    "note_type": "AI_SCREENING_NOTE",
+    "contains": [
+      "نتیجه: رزومه در غربالگری داخلی رد شد",
+      "دلایل رد"
+    ]
+  }
+]

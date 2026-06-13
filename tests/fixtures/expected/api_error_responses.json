@@ -1,0 +1,12 @@
+[
+  {
+    "code": "RULESET_NOT_ACTIVE",
+    "message_fa": "برای این عنوان شغلی قانون فعال تعریف نشده است.",
+    "retryable": false
+  },
+  {
+    "code": "AI_SCHEMA_VALIDATION_FAILED",
+    "message_fa": "خروجی هوش مصنوعی با ساختار مورد انتظار سامانه سازگار نبود و در تصمیم نهایی استفاده نشد.",
+    "retryable": false
+  }
+]

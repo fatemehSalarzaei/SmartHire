@@ -1,0 +1,2711 @@
+{
+	"info": {
+		"_postman_id": "24ceb0bc-5ba5-471f-9a58-d4edc1c41716",
+		"name": "Cando.AtsEdge.Presentation.Api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9235198"
+	},
+	"item": [
+		{
+			"name": "api",
+			"item": [
+				{
+					"name": "v1",
+					"item": [
+						{
+							"name": "Application",
+							"item": [
+								{
+									"name": "GetApplications",
+									"item": [
+										{
+											"name": "/api/v1/Application/GetApplications",
+											"request": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{base_url}}/api/v1/Application/GetApplications?pageNumber={{page_number}}&pageSize={{page_size}}",
+													"host": [
+														"{{base_url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"Application",
+														"GetApplications"
+													],
+													"query": [
+														{
+															"key": "pageNumber",
+															"value": "{{page_number}}"
+														},
+														{
+															"key": "pageSize",
+															"value": "{{page_size}}"
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "Success",
+													"originalRequest": {
+														"method": "GET",
+														"header": [],
+														"url": {
+															"raw": "{{base_url}}/api/v1/Application/GetApplications?pageNumber={{page_number}}&pageSize={{page_size}}",
+															"host": [
+																"{{base_url}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"Application",
+																"GetApplications"
+															],
+															"query": [
+																{
+																	"key": "pageNumber",
+																	"value": "{{page_number}}"
+																},
+																{
+																	"key": "pageSize",
+																	"value": "{{page_size}}"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "transfer-encoding",
+															"value": "chunked"
+														},
+														{
+															"key": "content-type",
+															"value": "application/json; charset=utf-8"
+														},
+														{
+															"key": "server",
+															"value": "Microsoft-IIS/10.0"
+														},
+														{
+															"key": "x-powered-by",
+															"value": "ASP.NET"
+														},
+														{
+															"key": "date",
+															"value": "Mon, 26 Aug 2024 14:11:19 GMT"
+														},
+														{
+															"key": "set-cookie",
+															"value": "SERVERID=WEB3|ZsyNK|ZsyM+; path=/"
+														},
+														{
+															"key": "cache-control",
+															"value": "private"
+														}
+													],
+													"cookie": [],
+													"body": "{\n    \"data\": {\n        \"items\": [\n            {\n                \"id\": 33,\n                \"jobId\": 4,\n                \"candidateId\": 56,\n                \"hireStepId\": 10,\n                \"statusId\": 15,\n                \"hireTime\": \"2022-02-13T03:28:22.706\",\n                \"needToMerge\": false,\n                \"isSeen\": true,\n                \"rejectTime\": \"2022-02-17T10:35:22.706\",\n                \"rejectionReasonId\": 2,\n                \"isRejectionEmailRequested\": true,\n                \"matchingScore\": 52\n            }\n        ],\n        \"totalItems\": 40516,\n        \"totalPages\": 4052,\n        \"currentPage\": 1,\n        \"nextPage\": 2,\n        \"previousPage\": null\n    },\n    \"succeed\": true,\n    \"statusCode\": 0,\n    \"message\": null\n}"
+												}
+											]
+										}
+									]
+								},
+								{
+									"name": "GetApplicationSources",
+									"item": [
+										{
+											"name": "/api/v1/Application/GetApplicationSources",
+											"request": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{base_url}}/api/v1/Application/GetApplicationSources?pageNumber={{page_number}}&pageSize={{page_size}}",
+													"host": [
+														"{{base_url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"Application",
+														"GetApplicationSources"
+													],
+													"query": [
+														{
+															"key": "pageNumber",
+															"value": "{{page_number}}"
+														},
+														{
+															"key": "pageSize",
+															"value": "{{page_size}}"
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "Success",
+													"originalRequest": {
+														"method": "GET",
+														"header": [],
+														"url": {
+															"raw": "{{base_url}}/api/v1/Application/GetApplicationSources?pageNumber={{page_number}}&pageSize={{page_size}}",
+															"host": [
+																"{{base_url}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"Application",
+																"GetApplicationSources"
+															],
+															"query": [
+																{
+																	"key": "pageNumber",
+																	"value": "{{page_number}}"
+																},
+																{
+																	"key": "pageSize",
+																	"value": "{{page_size}}"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "transfer-encoding",
+															"value": "chunked"
+														},
+														{
+															"key": "content-type",
+															"value": "application/json; charset=utf-8"
+														},
+														{
+															"key": "server",
+															"value": "Microsoft-IIS/10.0"
+														},
+														{
+															"key": "x-powered-by",
+															"value": "ASP.NET"
+														},
+														{
+															"key": "date",
+															"value": "Mon, 26 Aug 2024 14:12:00 GMT"
+														},
+														{
+															"key": "set-cookie",
+															"value": "SERVERID=WEB3|ZsyNU|ZsyM+; path=/"
+														},
+														{
+															"key": "cache-control",
+															"value": "private"
+														}
+													],
+													"cookie": [],
+													"body": "{\n    \"data\": {\n        \"items\": [\n            {\n                \"id\": 4,\n                \"applicationId\": 33,\n                \"sourceId\": 1,\n                \"cvId\": 20,\n                \"applicationTime\": \"2021-11-21T17:32:53.593\",\n                \"isManual\": false,\n                \"coverLetter\": \"فردی اجتماعی با اعتماد به نفس بالا ،صبور،سخت کوش،توانایی یادگیری سریع \",\n                \"submitterOperatorId\": 5,\n                \"applicationSourceFormId\": 16,\n                \"mergeAccepted\": true,\n                \"receivedApplicationId\": 3452658,\n                \"jobBoardCompanyName\": \"جاب ویژن\",\n                \"jobBoardJobTitle\": \"کارشناس مالیات\",\n                \"isApplicationCanceled\": false,\n                \"totalWorkExperienceTimeSpan\": 17.5\n            }\n        ],\n        \"totalItems\": 41376,\n        \"totalPages\": 4138,\n        \"currentPage\": 1,\n        \"nextPage\": 2,\n        \"previousPage\": null\n    },\n    \"succeed\": true,\n    \"statusCode\": 0,\n    \"message\": null\n}"
+												}
+											]
+										}
+									]
+								},
+								{
+									"name": "GetApplicationChangeStates",
+									"item": [
+										{
+											"name": "/api/v1/Application/GetApplicationChangeStates",
+											"request": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{base_url}}/api/v1/Application/GetApplicationChangeStates?pageNumber={{page_number}}&pageSize={{page_size}}",
+													"host": [
+														"{{base_url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"Application",
+														"GetApplicationChangeStates"
+													],
+													"query": [
+														{
+															"key": "pageNumber",
+															"value": "{{page_number}}"
+														},
+														{
+															"key": "pageSize",
+															"value": "{{page_size}}"
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "Success",
+													"originalRequest": {
+														"method": "GET",
+														"header": [],
+														"url": {
+															"raw": "{{base_url}}/api/v1/Application/GetApplicationChangeStates?pageNumber={{page_number}}&pageSize={{page_size}}",
+															"host": [
+																"{{base_url}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"Application",
+																"GetApplicationChangeStates"
+															],
+															"query": [
+																{
+																	"key": "pageNumber",
+																	"value": "{{page_number}}"
+																},
+																{
+																	"key": "pageSize",
+																	"value": "{{page_size}}"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "transfer-encoding",
+															"value": "chunked"
+														},
+														{
+															"key": "content-type",
+															"value": "application/json; charset=utf-8"
+														},
+														{
+															"key": "server",
+															"value": "Microsoft-IIS/10.0"
+														},
+														{
+															"key": "x-powered-by",
+															"value": "ASP.NET"
+														},
+														{
+															"key": "date",
+															"value": "Mon, 26 Aug 2024 14:12:44 GMT"
+														},
+														{
+															"key": "set-cookie",
+															"value": "SERVERID=WEB3|ZsyNf|ZsyM+; path=/"
+														},
+														{
+															"key": "cache-control",
+															"value": "private"
+														}
+													],
+													"cookie": [],
+													"body": "{\n    \"data\": {\n        \"items\": [\n            {\n                \"id\": 4,\n                \"applicationId\": 1686,\n                \"changeTime\": \"2022-01-29T09:51:43.574\",\n                \"fromStepId\": 1069,\n                \"toStepId\": 1069,\n                \"fromStatusId\": 15,\n                \"toStatusId\": 15,\n                \"changeStateTypeId\": 1,\n                \"changerOperatorId\": 5\n            },\n            {\n                \"id\": 5,\n                \"applicationId\": 1687,\n                \"changeTime\": \"2022-01-29T10:27:37.825\",\n                \"fromStepId\": 1069,\n                \"toStepId\": 1069,\n                \"fromStatusId\": 15,\n                \"toStatusId\": 15,\n                \"changeStateTypeId\": 1,\n                \"changerOperatorId\": 5\n            },\n            {\n                \"id\": 6,\n                \"applicationId\": 1688,\n                \"changeTime\": \"2022-01-29T12:06:52.911\",\n                \"fromStepId\": 1021,\n                \"toStepId\": 1021,\n                \"fromStatusId\": 15,\n                \"toStatusId\": 15,\n                \"changeStateTypeId\": 1,\n                \"changerOperatorId\": null\n            },\n            {\n                \"id\": 7,\n                \"applicationId\": 1519,\n                \"changeTime\": \"2022-01-29T13:58:29.822\",\n                \"fromStepId\": 1023,\n                \"toStepId\": 1024,\n                \"fromStatusId\": 15,\n                \"toStatusId\": 15,\n                \"changeStateTypeId\": 2,\n                \"changerOperatorId\": 5\n            },\n            {\n                \"id\": 9,\n                \"applicationId\": 1689,\n                \"changeTime\": \"2022-02-01T12:38:20.093\",\n                \"fromStepId\": 112,\n                \"toStepId\": 112,\n                \"fromStatusId\": 15,\n                \"toStatusId\": 15,\n                \"changeStateTypeId\": 1,\n                \"changerOperatorId\": 5\n            },\n            {\n                \"id\": 10,\n                \"applicationId\": 2138,\n                \"changeTime\": \"2022-02-02T12:36:19.594\",\n                \"fromStepId\": 1069,\n                \"toStepId\": 1069,\n                \"fromStatusId\": 15,\n                \"toStatusId\": 15,\n                \"changeStateTypeId\": 1,\n                \"changerOperatorId\": 5\n            },\n            {\n                \"id\": 11,\n                \"applicationId\": 2133,\n                \"changeTime\": \"2022-02-02T12:36:37.2\",\n                \"fromStepId\": 1069,\n                \"toStepId\": 1069,\n                \"fromStatusId\": 15,\n                \"toStatusId\": 15,\n                \"changeStateTypeId\": 1,\n                \"changerOperatorId\": 5\n            },\n            {\n                \"id\": 14,\n                \"applicationId\": 2136,\n                \"changeTime\": \"2022-02-02T12:39:21.74\",\n                \"fromStepId\": 112,\n                \"toStepId\": 112,\n                \"fromStatusId\": 15,\n                \"toStatusId\": 15,\n                \"changeStateTypeId\": 1,\n                \"changerOperatorId\": 5\n            },\n            {\n                \"id\": 18,\n                \"applicationId\": 2140,\n                \"changeTime\": \"2022-02-02T12:42:30.796\",\n                \"fromStepId\": 1069,\n                \"toStepId\": 1069,\n                \"fromStatusId\": 15,\n                \"toStatusId\": 15,\n                \"changeStateTypeId\": 1,\n                \"changerOperatorId\": 5\n            },\n            {\n                \"id\": 19,\n                \"applicationId\": 2141,\n                \"changeTime\": \"2022-02-02T13:34:22.787\",\n                \"fromStepId\": 978,\n                \"toStepId\": 978,\n                \"fromStatusId\": 15,\n                \"toStatusId\": 15,\n                \"changeStateTypeId\": 1,\n                \"changerOperatorId\": 5\n            }\n        ],\n        \"totalItems\": 43190,\n        \"totalPages\": 4319,\n        \"currentPage\": 1,\n        \"nextPage\": 2,\n        \"previousPage\": null\n    },\n    \"succeed\": true,\n    \"statusCode\": 0,\n    \"message\": null\n}"
+												}
+											]
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "Candidate",
+							"item": [
+								{
+									"name": "GetCandidates",
+									"item": [
+										{
+											"name": "/api/v1/Candidate/GetCandidates",
+											"request": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{base_url}}/api/v1/Candidate/GetCandidates?pageSize={{page_size}}&pageNumber={{page_number}}",
+													"host": [
+														"{{base_url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"Candidate",
+														"GetCandidates"
+													],
+													"query": [
+														{
+															"key": "pageSize",
+															"value": "{{page_size}}"
+														},
+														{
+															"key": "pageNumber",
+															"value": "{{page_number}}"
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "Success",
+													"originalRequest": {
+														"method": "GET",
+														"header": [],
+														"url": {
+															"raw": "{{base_url}}/api/v1/Candidate/GetCandidates?pageSize={{page_size}}&pageNumber={{page_number}}",
+															"host": [
+																"{{base_url}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"Candidate",
+																"GetCandidates"
+															],
+															"query": [
+																{
+																	"key": "pageSize",
+																	"value": "{{page_size}}"
+																},
+																{
+																	"key": "pageNumber",
+																	"value": "{{page_number}}"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "transfer-encoding",
+															"value": "chunked"
+														},
+														{
+															"key": "content-type",
+															"value": "application/json; charset=utf-8"
+														},
+														{
+															"key": "server",
+															"value": "Microsoft-IIS/10.0"
+														},
+														{
+															"key": "x-powered-by",
+															"value": "ASP.NET"
+														},
+														{
+															"key": "date",
+															"value": "Mon, 26 Aug 2024 14:13:13 GMT"
+														},
+														{
+															"key": "set-cookie",
+															"value": "SERVERID=WEB3|ZsyNm|ZsyM+; path=/"
+														},
+														{
+															"key": "cache-control",
+															"value": "private"
+														}
+													],
+													"cookie": [],
+													"body": "{\n    \"data\": {\n        \"items\": [\n            {\n                \"id\": 10,\n                \"fullName\": \"ali\",\n                \"mobile\": \"09149249841\",\n                \"email\": \"ali77@gmail.com\",\n                \"birthDate\": \"1995-07-28T00:00:00\",\n                \"maritalStatusId\": 1,\n                \"militaryServiceStatusId\": 800,\n                \"residenceStateId\": 12,\n                \"residenceCityId\": 1900,\n                \"residenceRegionId\": 410,\n                \"genderId\": 25,\n                \"sourceId\": 6,\n                \"submitTime\": \"2021-10-10T00:00:00\"\n            }\n        ],\n        \"totalItems\": 28527,\n        \"totalPages\": 2853,\n        \"currentPage\": 1,\n        \"nextPage\": 2,\n        \"previousPage\": null\n    },\n    \"succeed\": true,\n    \"statusCode\": 0,\n    \"message\": null\n}"
+												}
+											]
+										}
+									]
+								},
+								{
+									"name": "GetCandidateTags",
+									"item": [
+										{
+											"name": "/api/v1/Candidate/GetCandidateTags",
+											"request": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{base_url}}/api/v1/Candidate/GetCandidateTags?pageNumber={{page_number}}&pageSize={{page_size}}",
+													"host": [
+														"{{base_url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"Candidate",
+														"GetCandidateTags"
+													],
+													"query": [
+														{
+															"key": "pageNumber",
+															"value": "{{page_number}}"
+														},
+														{
+															"key": "pageSize",
+															"value": "{{page_size}}"
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "Success",
+													"originalRequest": {
+														"method": "GET",
+														"header": [],
+														"url": {
+															"raw": "{{base_url}}/api/v1/Candidate/GetCandidateTags?pageNumber={{page_number}}&pageSize={{page_size}}",
+															"host": [
+																"{{base_url}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"Candidate",
+																"GetCandidateTags"
+															],
+															"query": [
+																{
+																	"key": "pageNumber",
+																	"value": "{{page_number}}"
+																},
+																{
+																	"key": "pageSize",
+																	"value": "{{page_size}}"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "transfer-encoding",
+															"value": "chunked"
+														},
+														{
+															"key": "content-type",
+															"value": "application/json; charset=utf-8"
+														},
+														{
+															"key": "server",
+															"value": "Microsoft-IIS/10.0"
+														},
+														{
+															"key": "x-powered-by",
+															"value": "ASP.NET"
+														},
+														{
+															"key": "date",
+															"value": "Mon, 26 Aug 2024 14:14:16 GMT"
+														},
+														{
+															"key": "set-cookie",
+															"value": "SERVERID=WEB3|ZsyN2|ZsyM+; path=/"
+														},
+														{
+															"key": "cache-control",
+															"value": "private"
+														}
+													],
+													"cookie": [],
+													"body": "{\n    \"data\": {\n        \"items\": [\n            {\n                \"id\": 3,\n                \"candidateId\": 68,\n                \"tagId\": 3,\n                \"submitTime\": \"2021-09-01T00:00:00\",\n                \"submitterOperatorId\": 5,\n                \"isDeleted\": false,\n                \"lastChangeUserId\": null\n            },\n            {\n                \"id\": 7,\n                \"candidateId\": 68,\n                \"tagId\": 5,\n                \"submitTime\": \"2021-12-11T19:43:03.828\",\n                \"submitterOperatorId\": 5,\n                \"isDeleted\": false,\n                \"lastChangeUserId\": null\n            },\n            {\n                \"id\": 8,\n                \"candidateId\": 68,\n                \"tagId\": 6,\n                \"submitTime\": \"2021-12-11T19:43:19.253\",\n                \"submitterOperatorId\": 5,\n                \"isDeleted\": false,\n                \"lastChangeUserId\": null\n            },\n            {\n                \"id\": 12,\n                \"candidateId\": 68,\n                \"tagId\": 2,\n                \"submitTime\": \"2022-01-29T14:08:49.088\",\n                \"submitterOperatorId\": 5,\n                \"isDeleted\": false,\n                \"lastChangeUserId\": null\n            },\n            {\n                \"id\": 18,\n                \"candidateId\": 499,\n                \"tagId\": 3,\n                \"submitTime\": \"2022-01-30T16:27:19.799\",\n                \"submitterOperatorId\": 5,\n                \"isDeleted\": false,\n                \"lastChangeUserId\": null\n            },\n            {\n                \"id\": 22,\n                \"candidateId\": 499,\n                \"tagId\": 12,\n                \"submitTime\": \"2022-01-30T16:39:41.296\",\n                \"submitterOperatorId\": 5,\n                \"isDeleted\": false,\n                \"lastChangeUserId\": null\n            },\n            {\n                \"id\": 25,\n                \"candidateId\": 968,\n                \"tagId\": 5,\n                \"submitTime\": \"2022-01-30T16:56:47.167\",\n                \"submitterOperatorId\": 5,\n                \"isDeleted\": false,\n                \"lastChangeUserId\": null\n            },\n            {\n                \"id\": 28,\n                \"candidateId\": 68,\n                \"tagId\": 7,\n                \"submitTime\": \"2022-01-30T17:42:20.922\",\n                \"submitterOperatorId\": 5,\n                \"isDeleted\": false,\n                \"lastChangeUserId\": null\n            },\n            {\n                \"id\": 29,\n                \"candidateId\": 68,\n                \"tagId\": 14,\n                \"submitTime\": \"2022-01-30T17:43:17.924\",\n                \"submitterOperatorId\": 5,\n                \"isDeleted\": false,\n                \"lastChangeUserId\": null\n            },\n            {\n                \"id\": 31,\n                \"candidateId\": 968,\n                \"tagId\": 16,\n                \"submitTime\": \"2022-01-30T18:46:03.586\",\n                \"submitterOperatorId\": 5,\n                \"isDeleted\": false,\n                \"lastChangeUserId\": null\n            }\n        ],\n        \"totalItems\": 224,\n        \"totalPages\": 23,\n        \"currentPage\": 1,\n        \"nextPage\": 2,\n        \"previousPage\": null\n    },\n    \"succeed\": true,\n    \"statusCode\": 0,\n    \"message\": null\n}"
+												}
+											]
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "Company",
+							"item": [
+								{
+									"name": "GetBranches",
+									"item": [
+										{
+											"name": "/api/v1/Company/GetBranches",
+											"request": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{base_url}}/api/v1/Company/GetBranches?pageSize={{page_size}}&pageNumber={{page_number}}",
+													"host": [
+														"{{base_url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"Company",
+														"GetBranches"
+													],
+													"query": [
+														{
+															"key": "pageSize",
+															"value": "{{page_size}}"
+														},
+														{
+															"key": "pageNumber",
+															"value": "{{page_number}}"
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "Success",
+													"originalRequest": {
+														"method": "GET",
+														"header": [],
+														"url": {
+															"raw": "{{base_url}}/api/v1/Company/GetBranches?pageSize={{page_size}}&pageNumber={{page_number}}",
+															"host": [
+																"{{base_url}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"Company",
+																"GetBranches"
+															],
+															"query": [
+																{
+																	"key": "pageSize",
+																	"value": "{{page_size}}"
+																},
+																{
+																	"key": "pageNumber",
+																	"value": "{{page_number}}"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "transfer-encoding",
+															"value": "chunked"
+														},
+														{
+															"key": "content-type",
+															"value": "application/json; charset=utf-8"
+														},
+														{
+															"key": "server",
+															"value": "Microsoft-IIS/10.0"
+														},
+														{
+															"key": "x-powered-by",
+															"value": "ASP.NET"
+														},
+														{
+															"key": "date",
+															"value": "Mon, 26 Aug 2024 14:15:23 GMT"
+														},
+														{
+															"key": "set-cookie",
+															"value": "SERVERID=WEB3|ZsyOH|ZsyM+; path=/"
+														},
+														{
+															"key": "cache-control",
+															"value": "private"
+														}
+													],
+													"cookie": [],
+													"body": "{\n    \"data\": {\n        \"items\": [\n            {\n                \"id\": 1,\n                \"title\": \"جاب ویژن مرکزی\",\n                \"parentId\": null,\n                \"submitTime\": \"2023-05-06T14:55:53.318\"\n            },\n            {\n                \"id\": 7,\n                \"title\": \"جاب ویژن فرعی\",\n                \"parentId\": 1,\n                \"submitTime\": \"2024-05-03T12:14:10.561\"\n            }\n        ],\n        \"totalItems\": 2,\n        \"totalPages\": 1,\n        \"currentPage\": 1,\n        \"nextPage\": null,\n        \"previousPage\": null\n    },\n    \"succeed\": true,\n    \"statusCode\": 0,\n    \"message\": null\n}"
+												}
+											]
+										}
+									]
+								},
+								{
+									"name": "GetDepartments",
+									"item": [
+										{
+											"name": "/api/v1/Company/GetDepartments",
+											"request": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{base_url}}/api/v1/Company/GetDepartments?pageSize={{page_size}}&pageNumber={{page_number}}",
+													"host": [
+														"{{base_url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"Company",
+														"GetDepartments"
+													],
+													"query": [
+														{
+															"key": "pageSize",
+															"value": "{{page_size}}"
+														},
+														{
+															"key": "pageNumber",
+															"value": "{{page_number}}"
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "Success",
+													"originalRequest": {
+														"method": "GET",
+														"header": [],
+														"url": {
+															"raw": "{{base_url}}/api/v1/Company/GetDepartments?pageSize={{page_size}}&pageNumber={{page_number}}",
+															"host": [
+																"{{base_url}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"Company",
+																"GetDepartments"
+															],
+															"query": [
+																{
+																	"key": "pageSize",
+																	"value": "{{page_size}}"
+																},
+																{
+																	"key": "pageNumber",
+																	"value": "{{page_number}}"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "transfer-encoding",
+															"value": "chunked"
+														},
+														{
+															"key": "content-type",
+															"value": "application/json; charset=utf-8"
+														},
+														{
+															"key": "server",
+															"value": "Microsoft-IIS/10.0"
+														},
+														{
+															"key": "x-powered-by",
+															"value": "ASP.NET"
+														},
+														{
+															"key": "date",
+															"value": "Mon, 26 Aug 2024 14:15:33 GMT"
+														},
+														{
+															"key": "set-cookie",
+															"value": "SERVERID=WEB4|ZsyOK|ZsyOK; path=/"
+														},
+														{
+															"key": "cache-control",
+															"value": "private"
+														}
+													],
+													"cookie": [],
+													"body": "{\n    \"data\": {\n        \"items\": [           \n            {\n                \"id\": 2,\n                \"title\": \"دپارتمان دیجیتال مارکتینگ\",\n                \"createTime\": \"2021-11-14T16:42:23.158\",\n                \"isDefault\": false\n            },\n            {\n                \"id\": 3,\n                \"title\": \"دپارتمان تولید محتوا\",\n                \"createTime\": \"2021-11-15T13:23:39.502\",\n                \"isDefault\": false\n            },\n            {\n                \"id\": 4,\n                \"title\": \"دپارتمان اکانت\",\n                \"createTime\": \"2021-11-15T13:25:52.408\",\n                \"isDefault\": false\n            }\n        ],\n        \"totalItems\": 130,\n        \"totalPages\": 13,\n        \"currentPage\": 1,\n        \"nextPage\": 2,\n        \"previousPage\": null\n    },\n    \"succeed\": true,\n    \"statusCode\": 0,\n    \"message\": null\n}"
+												}
+											]
+										}
+									]
+								},
+								{
+									"name": "GetAddresses",
+									"item": [
+										{
+											"name": "/api/v1/Company/GetAddresses",
+											"request": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{base_url}}/api/v1/Company/GetAddresses?pageSize={{page_size}}&pageNumber={{page_number}}",
+													"host": [
+														"{{base_url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"Company",
+														"GetAddresses"
+													],
+													"query": [
+														{
+															"key": "pageSize",
+															"value": "{{page_size}}"
+														},
+														{
+															"key": "pageNumber",
+															"value": "{{page_number}}"
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "Success",
+													"originalRequest": {
+														"method": "GET",
+														"header": [],
+														"url": {
+															"raw": "{{base_url}}/api/v1/Company/GetAddresses?pageSize={{page_size}}&pageNumber={{page_number}}",
+															"host": [
+																"{{base_url}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"Company",
+																"GetAddresses"
+															],
+															"query": [
+																{
+																	"key": "pageSize",
+																	"value": "{{page_size}}"
+																},
+																{
+																	"key": "pageNumber",
+																	"value": "{{page_number}}"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "transfer-encoding",
+															"value": "chunked"
+														},
+														{
+															"key": "content-type",
+															"value": "application/json; charset=utf-8"
+														},
+														{
+															"key": "server",
+															"value": "Microsoft-IIS/10.0"
+														},
+														{
+															"key": "x-powered-by",
+															"value": "ASP.NET"
+														},
+														{
+															"key": "date",
+															"value": "Mon, 26 Aug 2024 14:16:09 GMT"
+														},
+														{
+															"key": "set-cookie",
+															"value": "SERVERID=WEB4|ZsyOT|ZsyOK; path=/"
+														},
+														{
+															"key": "cache-control",
+															"value": "private"
+														}
+													],
+													"cookie": [],
+													"body": "{\n    \"data\": {\n        \"items\": [\n            {\n                \"id\": 2,\n                \"title\": \"دفتر یادگار امام\",\n                \"cityId\": 1960,\n                \"regionId\": null,\n                \"address\": \"تهران-بزرگراه یادگار امام\",\n                \"submitTime\": \"2021-10-26T11:54:55.934\",\n                \"stateId\": 17,\n                \"branchId\": 1\n            },\n            {\n                \"id\": 20,\n                \"title\": \"دفتر مرکزی\",\n                \"cityId\": 2038,\n                \"regionId\": 4,\n                \"address\": \"سعادت آباد\",\n                \"submitTime\": \"2021-11-18T15:35:15.84\",\n                \"stateId\": 17,\n                \"branchId\": 1\n            }\n        ],\n        \"totalItems\": 42,\n        \"totalPages\": 5,\n        \"currentPage\": 1,\n        \"nextPage\": 2,\n        \"previousPage\": null\n    },\n    \"succeed\": true,\n    \"statusCode\": 0,\n    \"message\": null\n}"
+												}
+											]
+										}
+									]
+								},
+								{
+									"name": "GetRejectReasons",
+									"item": [
+										{
+											"name": "/api/v1/Company/GetRejectReasons",
+											"request": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{base_url}}/api/v1/Company/GetRejectReasons?pageSize={{page_size}}&pageNumber={{page_number}}",
+													"host": [
+														"{{base_url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"Company",
+														"GetRejectReasons"
+													],
+													"query": [
+														{
+															"key": "pageSize",
+															"value": "{{page_size}}"
+														},
+														{
+															"key": "pageNumber",
+															"value": "{{page_number}}"
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "Success",
+													"originalRequest": {
+														"method": "GET",
+														"header": [],
+														"url": {
+															"raw": "{{base_url}}/api/v1/Company/GetRejectReasons?pageSize={{page_size}}&pageNumber={{page_number}}",
+															"host": [
+																"{{base_url}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"Company",
+																"GetRejectReasons"
+															],
+															"query": [
+																{
+																	"key": "pageSize",
+																	"value": "{{page_size}}"
+																},
+																{
+																	"key": "pageNumber",
+																	"value": "{{page_number}}"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "transfer-encoding",
+															"value": "chunked"
+														},
+														{
+															"key": "content-type",
+															"value": "application/json; charset=utf-8"
+														},
+														{
+															"key": "server",
+															"value": "Microsoft-IIS/10.0"
+														},
+														{
+															"key": "x-powered-by",
+															"value": "ASP.NET"
+														},
+														{
+															"key": "date",
+															"value": "Mon, 26 Aug 2024 14:16:22 GMT"
+														},
+														{
+															"key": "set-cookie",
+															"value": "SERVERID=WEB4|ZsyOW|ZsyOK; path=/"
+														},
+														{
+															"key": "cache-control",
+															"value": "private"
+														}
+													],
+													"cookie": [],
+													"body": "{\n    \"data\": {\n        \"items\": [\n            {\n                \"id\": 1,\n                \"title\": \"نداشتن سابقه کار کافی در این حوزه\"\n            },\n            {\n                \"id\": 3,\n                \"title\": \"عدم تطابق سن / جنسیت / محل سکونت / وضعیت سربازی\"\n            },\n            {\n                \"id\": 4,\n                \"title\": \"عدم تناسب حقوق درخواستی\"\n            },\n            {\n                \"id\": 5,\n                \"title\": \"عدم تناسب رشته تحصیلی یا دانشگاه با شرایط مدنظر\"\n            },\n            {\n                \"id\": 6,\n                \"title\": \"نداشتن سابقه کار کافی در این سطح سازمانی (Seniority Level)\"\n            },\n            {\n                \"id\": 7,\n                \"title\": \"نداشتن سابقه کار کافی در این صنعت\"\n            },\n            {\n                \"id\": 8,\n                \"title\": \"نداشتن توانمندی کافی در زبانهای خارجی\"\n            },\n            {\n                \"id\": 9,\n                \"title\": \"نداشتن توانمندی کافی در کار با نرم افزارها (یا زبانهای برنامه نویسی)\"\n            },\n            {\n                \"id\": 10,\n                \"title\": \"جابجایی بیش از حد در مشاغل گوناگون\"\n            },\n            {\n                \"id\": 11,\n                \"title\": \"فراتر از حد انتظار بودن (Over qualified)\"\n            }\n        ],\n        \"totalItems\": 40,\n        \"totalPages\": 4,\n        \"currentPage\": 1,\n        \"nextPage\": 2,\n        \"previousPage\": null\n    },\n    \"succeed\": true,\n    \"statusCode\": 0,\n    \"message\": null\n}"
+												}
+											]
+										}
+									]
+								},
+								{
+									"name": "GetRoles",
+									"item": [
+										{
+											"name": "/api/v1/Company/GetRoles",
+											"request": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{base_url}}/api/v1/Company/GetRoles?pageNumber={{page_number}}&pageSize={{page_size}}",
+													"host": [
+														"{{base_url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"Company",
+														"GetRoles"
+													],
+													"query": [
+														{
+															"key": "pageNumber",
+															"value": "{{page_number}}"
+														},
+														{
+															"key": "pageSize",
+															"value": "{{page_size}}"
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "Success",
+													"originalRequest": {
+														"method": "GET",
+														"header": [],
+														"url": {
+															"raw": "{{base_url}}/api/v1/Company/GetRoles?pageNumber={{page_number}}&pageSize={{page_size}}",
+															"host": [
+																"{{base_url}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"Company",
+																"GetRoles"
+															],
+															"query": [
+																{
+																	"key": "pageNumber",
+																	"value": "{{page_number}}"
+																},
+																{
+																	"key": "pageSize",
+																	"value": "{{page_size}}"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "transfer-encoding",
+															"value": "chunked"
+														},
+														{
+															"key": "content-type",
+															"value": "application/json; charset=utf-8"
+														},
+														{
+															"key": "server",
+															"value": "Microsoft-IIS/10.0"
+														},
+														{
+															"key": "x-powered-by",
+															"value": "ASP.NET"
+														},
+														{
+															"key": "date",
+															"value": "Mon, 26 Aug 2024 14:16:51 GMT"
+														},
+														{
+															"key": "set-cookie",
+															"value": "SERVERID=WEB4|ZsyOe|ZsyOK; path=/"
+														},
+														{
+															"key": "cache-control",
+															"value": "private"
+														}
+													],
+													"cookie": [],
+													"body": "{\n    \"data\": {\n        \"items\": [\n            {\n                \"id\": 1,\n                \"title\": \"ادمين\"\n            },\n            {\n                \"id\": 2,\n                \"title\": \"مدير دپارتمان\"\n            },\n            {\n                \"id\": 3,\n                \"title\": \"کارشناس جذب و استخدام\"\n            },\n            {\n                \"id\": 4,\n                \"title\": \"ارزياب\"\n            },\n            {\n                \"id\": 5,\n                \"title\": \"هماهنگ کننده\"\n            },\n            {\n                \"id\": 6,\n                \"title\": \"کارشناس\"\n            }\n        ],\n        \"totalItems\": 29,\n        \"totalPages\": 3,\n        \"currentPage\": 1,\n        \"nextPage\": 2,\n        \"previousPage\": null\n    },\n    \"succeed\": true,\n    \"statusCode\": 0,\n    \"message\": null\n}"
+												}
+											]
+										}
+									]
+								},
+								{
+									"name": "GetSources",
+									"item": [
+										{
+											"name": "/api/v1/Company/GetSources",
+											"request": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{base_url}}/api/v1/Company/GetSources?pageSize={{page_size}}&pageNumber={{page_number}}",
+													"host": [
+														"{{base_url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"Company",
+														"GetSources"
+													],
+													"query": [
+														{
+															"key": "pageSize",
+															"value": "{{page_size}}"
+														},
+														{
+															"key": "pageNumber",
+															"value": "{{page_number}}"
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "Success",
+													"originalRequest": {
+														"method": "GET",
+														"header": [],
+														"url": {
+															"raw": "{{base_url}}/api/v1/Company/GetSources?pageSize={{page_size}}&pageNumber={{page_number}}",
+															"host": [
+																"{{base_url}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"Company",
+																"GetSources"
+															],
+															"query": [
+																{
+																	"key": "pageSize",
+																	"value": "{{page_size}}"
+																},
+																{
+																	"key": "pageNumber",
+																	"value": "{{page_number}}"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "transfer-encoding",
+															"value": "chunked"
+														},
+														{
+															"key": "content-type",
+															"value": "application/json; charset=utf-8"
+														},
+														{
+															"key": "server",
+															"value": "Microsoft-IIS/10.0"
+														},
+														{
+															"key": "x-powered-by",
+															"value": "ASP.NET"
+														},
+														{
+															"key": "date",
+															"value": "Mon, 26 Aug 2024 14:17:25 GMT"
+														},
+														{
+															"key": "set-cookie",
+															"value": "SERVERID=WEB4|ZsyOm|ZsyOK; path=/"
+														},
+														{
+															"key": "cache-control",
+															"value": "private"
+														}
+													],
+													"cookie": [],
+													"body": "{\n    \"data\": {\n        \"items\": [\n            {\n                \"id\": 1,\n                \"name\": \"صفحه فرصت های شغلی\",\n                \"color\": \"#FDAB3D\",\n                \"isStatic\": true\n            },\n            {\n                \"id\": 2,\n                \"name\": \"آگهی شغلی جاب ویژن\",\n                \"color\": \"#008CFF\",\n                \"isStatic\": true\n            },\n            {\n                \"id\": 3,\n                \"name\": \"آگهی شغلی جابینجا\",\n                \"color\": \"#19C4A9\",\n                \"isStatic\": true\n            },\n            {\n                \"id\": 4,\n                \"name\": \"آگهی شغلی ایران تلنت\",\n                \"color\": \"#EF000E\",\n                \"isStatic\": true\n            },\n            {\n                \"id\": 5,\n                \"name\": \"بانک رزومه جاب ویژن\",\n                \"color\": \"#008CFF\",\n                \"isStatic\": true\n            },\n            {\n                \"id\": 6,\n                \"name\": \"رزومه های پیشنهادی جابینجا\",\n                \"color\": \"#19C4A9\",\n                \"isStatic\": true\n            },\n            {\n                \"id\": 7,\n                \"name\": \"لینکدین\",\n                \"color\": \"#0067A0\",\n                \"isStatic\": true\n            },\n            {\n                \"id\": 8,\n                \"name\": \"معرف\",\n                \"color\": \"#F65F7C\",\n                \"isStatic\": true\n            },\n            {\n                \"id\": 9,\n                \"name\": \"ایمیل\",\n                \"color\": \"#FFD700\",\n                \"isStatic\": true\n            },\n            {\n                \"id\": 10,\n                \"name\": \"نامشخص\",\n                \"color\": \"#939393\",\n                \"isStatic\": true\n            }\n        ],\n        \"totalItems\": 33,\n        \"totalPages\": 4,\n        \"currentPage\": 1,\n        \"nextPage\": 2,\n        \"previousPage\": null\n    },\n    \"succeed\": true,\n    \"statusCode\": 0,\n    \"message\": null\n}"
+												}
+											]
+										}
+									]
+								},
+								{
+									"name": "GetTags",
+									"item": [
+										{
+											"name": "/api/v1/Company/GetTags",
+											"request": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{base_url}}/api/v1/Company/GetTags?pageNumber={{page_number}}&pageSize={{page_size}}",
+													"host": [
+														"{{base_url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"Company",
+														"GetTags"
+													],
+													"query": [
+														{
+															"key": "pageNumber",
+															"value": "{{page_number}}"
+														},
+														{
+															"key": "pageSize",
+															"value": "{{page_size}}"
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "Success",
+													"originalRequest": {
+														"method": "GET",
+														"header": [],
+														"url": {
+															"raw": "{{base_url}}/api/v1/Company/GetTags?pageNumber={{page_number}}&pageSize={{page_size}}",
+															"host": [
+																"{{base_url}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"Company",
+																"GetTags"
+															],
+															"query": [
+																{
+																	"key": "pageNumber",
+																	"value": "{{page_number}}"
+																},
+																{
+																	"key": "pageSize",
+																	"value": "{{page_size}}"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "transfer-encoding",
+															"value": "chunked"
+														},
+														{
+															"key": "content-type",
+															"value": "application/json; charset=utf-8"
+														},
+														{
+															"key": "server",
+															"value": "Microsoft-IIS/10.0"
+														},
+														{
+															"key": "x-powered-by",
+															"value": "ASP.NET"
+														},
+														{
+															"key": "date",
+															"value": "Mon, 26 Aug 2024 14:17:44 GMT"
+														},
+														{
+															"key": "set-cookie",
+															"value": "SERVERID=WEB4|ZsyOr|ZsyOK; path=/"
+														},
+														{
+															"key": "cache-control",
+															"value": "private"
+														}
+													],
+													"cookie": [],
+													"body": "{\n    \"data\": {\n        \"items\": [\n            {\n                \"id\": 2,\n                \"title\": \"با استعداد\"\n            },\n            {\n                \"id\": 3,\n                \"title\": \"خلاق\"\n            },\n            {\n                \"id\": 5,\n                \"title\": \"تلاشگر\"\n            },\n            {\n                \"id\": 6,\n                \"title\": \"مؤدب\"\n            }\n        ],\n        \"totalItems\": 73,\n        \"totalPages\": 8,\n        \"currentPage\": 1,\n        \"nextPage\": 2,\n        \"previousPage\": null\n    },\n    \"succeed\": true,\n    \"statusCode\": 0,\n    \"message\": null\n}"
+												}
+											]
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "Cv",
+							"item": [
+								{
+									"name": "GetCvs",
+									"item": [
+										{
+											"name": "/api/v1/Cv/GetCvs",
+											"request": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{base_url}}/api/v1/Cv/GetCvs?pageNumber={{page_number}}&pageSize={{page_size}}",
+													"host": [
+														"{{base_url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"Cv",
+														"GetCvs"
+													],
+													"query": [
+														{
+															"key": "pageNumber",
+															"value": "{{page_number}}"
+														},
+														{
+															"key": "pageSize",
+															"value": "{{page_size}}"
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "Success",
+													"originalRequest": {
+														"method": "GET",
+														"header": [],
+														"url": {
+															"raw": "{{base_url}}/api/v1/Cv/GetCvs?pageNumber={{page_number}}&pageSize={{page_size}}",
+															"host": [
+																"{{base_url}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"Cv",
+																"GetCvs"
+															],
+															"query": [
+																{
+																	"key": "pageNumber",
+																	"value": "{{page_number}}"
+																},
+																{
+																	"key": "pageSize",
+																	"value": "{{page_size}}"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "transfer-encoding",
+															"value": "chunked"
+														},
+														{
+															"key": "content-type",
+															"value": "application/json; charset=utf-8"
+														},
+														{
+															"key": "server",
+															"value": "Microsoft-IIS/10.0"
+														},
+														{
+															"key": "x-powered-by",
+															"value": "ASP.NET"
+														},
+														{
+															"key": "date",
+															"value": "Mon, 26 Aug 2024 14:18:38 GMT"
+														},
+														{
+															"key": "set-cookie",
+															"value": "SERVERID=WEB4|ZsyO4|ZsyOK; path=/"
+														},
+														{
+															"key": "cache-control",
+															"value": "private"
+														}
+													],
+													"cookie": [],
+													"body": "{\n    \"data\": {\n        \"items\": [\n            {\n                \"id\": 20,\n                \"candidateId\": 56,\n                \"minSalary\": 35,\n                \"maxSalary\": 45,\n                \"workTypeId\": 1,\n                \"aboutMe\": \"With a wealth of experience and versatility in management, I have consistently demonstrated success in the technical, commercial, and production facets of diverse organizational units. My robust communication abilities, coupled with a comprehensive understanding of accounting and tax regulations, empower me to proficiently oversee annual budgets, financial matters, and marketing campaigns. As a leader and mentor, I excel in nurturing employee growth and cultivating an environment that champions\",\n                \"skills\": \"Excel, SAP ERP, Sage, Rahkaran System\",\n                \"createTime\": \"2021-11-21T17:32:53.593\",\n                \"address\": \"shahrak ekbatan\"\n            }\n        ],\n        \"totalItems\": 41472,\n        \"totalPages\": 4148,\n        \"currentPage\": 1,\n        \"nextPage\": 2,\n        \"previousPage\": null\n    },\n    \"succeed\": true,\n    \"statusCode\": 0,\n    \"message\": null\n}"
+												}
+											]
+										}
+									]
+								},
+								{
+									"name": "GetCvWorkExperiences",
+									"item": [
+										{
+											"name": "/api/v1/Cv/GetCvWorkExperiences",
+											"request": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{base_url}}/api/v1/CV/GetCvWorkExperiences?pageSize={{page_size}}&pageNumber={{page_number}}",
+													"host": [
+														"{{base_url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"CV",
+														"GetCvWorkExperiences"
+													],
+													"query": [
+														{
+															"key": "pageSize",
+															"value": "{{page_size}}"
+														},
+														{
+															"key": "pageNumber",
+															"value": "{{page_number}}"
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "Success",
+													"originalRequest": {
+														"method": "GET",
+														"header": [],
+														"url": {
+															"raw": "{{base_url}}/api/v1/CV/GetCvWorkExperiences?pageSize={{page_size}}&pageNumber={{page_number}}",
+															"host": [
+																"{{base_url}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"CV",
+																"GetCvWorkExperiences"
+															],
+															"query": [
+																{
+																	"key": "pageSize",
+																	"value": "{{page_size}}"
+																},
+																{
+																	"key": "pageNumber",
+																	"value": "{{page_number}}"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "transfer-encoding",
+															"value": "chunked"
+														},
+														{
+															"key": "content-type",
+															"value": "application/json; charset=utf-8"
+														},
+														{
+															"key": "server",
+															"value": "Microsoft-IIS/10.0"
+														},
+														{
+															"key": "x-powered-by",
+															"value": "ASP.NET"
+														},
+														{
+															"key": "date",
+															"value": "Mon, 26 Aug 2024 14:19:06 GMT"
+														},
+														{
+															"key": "set-cookie",
+															"value": "SERVERID=WEB4|ZsyO/|ZsyOK; path=/"
+														},
+														{
+															"key": "cache-control",
+															"value": "private"
+														}
+													],
+													"cookie": [],
+													"body": "{\n    \"data\": {\n        \"items\": [\n            {\n                \"id\": 5,\n                \"cvId\": 20,\n                \"companyName\": \"Baan\",\n                \"roleTitle\": \"Lecturer\",\n                \"jobCategoryId\": 1,\n                \"industryId\": 1,\n                \"seniorityLevelId\": 1,\n                \"companyCityId\": 1,\n                \"startYear\": 1399,\n                \"startMonth\": 1,\n                \"finishYear\": 1400,\n                \"finishMonth\": 1,\n                \"isMyCurrentJob\": false,\n                \"achievementsDescription\": \"Head of the Darts Association Office - Marketing and sales of sports and medical scales - Sales support\",\n                \"companyCountryId\": 1\n            }\n        ],\n        \"totalItems\": 100616,\n        \"totalPages\": 10062,\n        \"currentPage\": 1,\n        \"nextPage\": 2,\n        \"previousPage\": null\n    },\n    \"succeed\": true,\n    \"statusCode\": 0,\n    \"message\": null\n}"
+												}
+											]
+										}
+									]
+								},
+								{
+									"name": "GetCvUniversityDegrees",
+									"item": [
+										{
+											"name": "/api/v1/Cv/GetCvUniversityDegrees",
+											"request": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{base_url}}/api/v1/Cv/GetCvUniversityDegrees?pageNumber={{page_number}}&pageSize={{page_size}}",
+													"host": [
+														"{{base_url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"Cv",
+														"GetCvUniversityDegrees"
+													],
+													"query": [
+														{
+															"key": "pageNumber",
+															"value": "{{page_number}}"
+														},
+														{
+															"key": "pageSize",
+															"value": "{{page_size}}"
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "Success",
+													"originalRequest": {
+														"method": "GET",
+														"header": [],
+														"url": {
+															"raw": "{{base_url}}/api/v1/Cv/GetCvUniversityDegrees?pageNumber={{page_number}}&pageSize={{page_size}}",
+															"host": [
+																"{{base_url}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"Cv",
+																"GetCvUniversityDegrees"
+															],
+															"query": [
+																{
+																	"key": "pageNumber",
+																	"value": "{{page_number}}"
+																},
+																{
+																	"key": "pageSize",
+																	"value": "{{page_size}}"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "transfer-encoding",
+															"value": "chunked"
+														},
+														{
+															"key": "content-type",
+															"value": "application/json; charset=utf-8"
+														},
+														{
+															"key": "server",
+															"value": "Microsoft-IIS/10.0"
+														},
+														{
+															"key": "x-powered-by",
+															"value": "ASP.NET"
+														},
+														{
+															"key": "date",
+															"value": "Mon, 26 Aug 2024 14:19:38 GMT"
+														},
+														{
+															"key": "set-cookie",
+															"value": "SERVERID=WEB4|ZsyPH|ZsyOK; path=/"
+														},
+														{
+															"key": "cache-control",
+															"value": "private"
+														}
+													],
+													"cookie": [],
+													"body": "{\n    \"data\": {\n        \"items\": [\n            {\n                \"id\": 5,\n                \"cvId\": 20,\n                \"academicFieldId\": 1001,\n                \"universityDegreeLevelId\": 1,\n                \"universityCountryId\": 1,\n                \"universityName\": \"شریف\",\n                \"averageGrade\": \"19.01\",\n                \"startYear\": 1399,\n                \"startMonth\": 1,\n                \"finishYear\": 1400,\n                \"finishMonth\": 1,\n                \"isRemaining\": true\n            }\n        ],\n        \"totalItems\": 34744,\n        \"totalPages\": 3475,\n        \"currentPage\": 1,\n        \"nextPage\": 2,\n        \"previousPage\": null\n    },\n    \"succeed\": true,\n    \"statusCode\": 0,\n    \"message\": null\n}"
+												}
+											]
+										}
+									]
+								},
+								{
+									"name": "GetCvSoftwareSkills",
+									"item": [
+										{
+											"name": "/api/v1/Cv/GetCvSoftwareSkills",
+											"request": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{base_url}}/api/v1/CV/GetCvSoftwareSkills?pageNumber={{page_number}}&pageSize={{page_size}}",
+													"host": [
+														"{{base_url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"CV",
+														"GetCvSoftwareSkills"
+													],
+													"query": [
+														{
+															"key": "pageNumber",
+															"value": "{{page_number}}"
+														},
+														{
+															"key": "pageSize",
+															"value": "{{page_size}}"
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "Success",
+													"originalRequest": {
+														"method": "GET",
+														"header": [],
+														"url": {
+															"raw": "{{base_url}}/api/v1/CV/GetCvSoftwareSkills?pageNumber={{page_number}}&pageSize={{page_size}}",
+															"host": [
+																"{{base_url}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"CV",
+																"GetCvSoftwareSkills"
+															],
+															"query": [
+																{
+																	"key": "pageNumber",
+																	"value": "{{page_number}}"
+																},
+																{
+																	"key": "pageSize",
+																	"value": "{{page_size}}"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "transfer-encoding",
+															"value": "chunked"
+														},
+														{
+															"key": "content-type",
+															"value": "application/json; charset=utf-8"
+														},
+														{
+															"key": "server",
+															"value": "Microsoft-IIS/10.0"
+														},
+														{
+															"key": "x-powered-by",
+															"value": "ASP.NET"
+														},
+														{
+															"key": "date",
+															"value": "Mon, 26 Aug 2024 14:20:09 GMT"
+														},
+														{
+															"key": "set-cookie",
+															"value": "SERVERID=WEB4|ZsyPP|ZsyOK; path=/"
+														},
+														{
+															"key": "cache-control",
+															"value": "private"
+														}
+													],
+													"cookie": [],
+													"body": "{\n    \"data\": {\n        \"items\": [\n            {\n                \"id\": 10,\n                \"cvId\": 20,\n                \"softwareId\": 1,\n                \"skillLevelId\": 1\n            },\n            {\n                \"id\": 11,\n                \"cvId\": 21,\n                \"softwareId\": 1,\n                \"skillLevelId\": 1\n            },\n            {\n                \"id\": 12,\n                \"cvId\": 22,\n                \"softwareId\": 1,\n                \"skillLevelId\": 1\n            },\n            {\n                \"id\": 13,\n                \"cvId\": 23,\n                \"softwareId\": 1,\n                \"skillLevelId\": 1\n            },\n            {\n                \"id\": 14,\n                \"cvId\": 24,\n                \"softwareId\": 1,\n                \"skillLevelId\": 1\n            },\n            {\n                \"id\": 17,\n                \"cvId\": 27,\n                \"softwareId\": 1,\n                \"skillLevelId\": 1\n            },\n            {\n                \"id\": 19,\n                \"cvId\": 28,\n                \"softwareId\": 1,\n                \"skillLevelId\": 1\n            },\n            {\n                \"id\": 23,\n                \"cvId\": 29,\n                \"softwareId\": 1,\n                \"skillLevelId\": 1\n            },\n            {\n                \"id\": 29,\n                \"cvId\": 45,\n                \"softwareId\": 1,\n                \"skillLevelId\": 1\n            },\n            {\n                \"id\": 34,\n                \"cvId\": 60,\n                \"softwareId\": 0,\n                \"skillLevelId\": 0\n            }\n        ],\n        \"totalItems\": 142690,\n        \"totalPages\": 14269,\n        \"currentPage\": 1,\n        \"nextPage\": 2,\n        \"previousPage\": null\n    },\n    \"succeed\": true,\n    \"statusCode\": 0,\n    \"message\": null\n}"
+												}
+											]
+										}
+									]
+								},
+								{
+									"name": "GetCvLanguageSkills",
+									"item": [
+										{
+											"name": "/api/v1/Cv/GetCvLanguageSkills",
+											"request": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{base_url}}/api/v1/CV/GetCvLanguageSkills?pageNumber={{page_number}}&pageSize={{page_size}}",
+													"host": [
+														"{{base_url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"CV",
+														"GetCvLanguageSkills"
+													],
+													"query": [
+														{
+															"key": "pageNumber",
+															"value": "{{page_number}}"
+														},
+														{
+															"key": "pageSize",
+															"value": "{{page_size}}"
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "Success",
+													"originalRequest": {
+														"method": "GET",
+														"header": [],
+														"url": {
+															"raw": "{{base_url}}/api/v1/CV/GetCvLanguageSkills?pageNumber={{page_number}}&pageSize={{page_size}}",
+															"host": [
+																"{{base_url}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"CV",
+																"GetCvLanguageSkills"
+															],
+															"query": [
+																{
+																	"key": "pageNumber",
+																	"value": "{{page_number}}"
+																},
+																{
+																	"key": "pageSize",
+																	"value": "{{page_size}}"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "transfer-encoding",
+															"value": "chunked"
+														},
+														{
+															"key": "content-type",
+															"value": "application/json; charset=utf-8"
+														},
+														{
+															"key": "server",
+															"value": "Microsoft-IIS/10.0"
+														},
+														{
+															"key": "x-powered-by",
+															"value": "ASP.NET"
+														},
+														{
+															"key": "date",
+															"value": "Mon, 26 Aug 2024 14:20:34 GMT"
+														},
+														{
+															"key": "set-cookie",
+															"value": "SERVERID=WEB4|ZsyPV|ZsyOK; path=/"
+														},
+														{
+															"key": "cache-control",
+															"value": "private"
+														}
+													],
+													"cookie": [],
+													"body": "{\n    \"data\": {\n        \"items\": [\n            {\n                \"id\": 10,\n                \"cvId\": 20,\n                \"languageId\": 1,\n                \"skillLevelId\": 1\n            },\n            {\n                \"id\": 11,\n                \"cvId\": 21,\n                \"languageId\": 1,\n                \"skillLevelId\": 1\n            },\n            {\n                \"id\": 12,\n                \"cvId\": 22,\n                \"languageId\": 1,\n                \"skillLevelId\": 1\n            },\n            {\n                \"id\": 13,\n                \"cvId\": 23,\n                \"languageId\": 1,\n                \"skillLevelId\": 1\n            },\n            {\n                \"id\": 14,\n                \"cvId\": 24,\n                \"languageId\": 1,\n                \"skillLevelId\": 1\n            },\n            {\n                \"id\": 17,\n                \"cvId\": 27,\n                \"languageId\": 1,\n                \"skillLevelId\": 1\n            },\n            {\n                \"id\": 19,\n                \"cvId\": 28,\n                \"languageId\": 1,\n                \"skillLevelId\": 1\n            },\n            {\n                \"id\": 23,\n                \"cvId\": 29,\n                \"languageId\": 1,\n                \"skillLevelId\": 1\n            },\n            {\n                \"id\": 29,\n                \"cvId\": 45,\n                \"languageId\": 1,\n                \"skillLevelId\": 1\n            },\n            {\n                \"id\": 34,\n                \"cvId\": 60,\n                \"languageId\": 0,\n                \"skillLevelId\": 0\n            }\n        ],\n        \"totalItems\": 30921,\n        \"totalPages\": 3093,\n        \"currentPage\": 1,\n        \"nextPage\": 2,\n        \"previousPage\": null\n    },\n    \"succeed\": true,\n    \"statusCode\": 0,\n    \"message\": null\n}"
+												}
+											]
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "Interview",
+							"item": [
+								{
+									"name": "GetInterviews",
+									"item": [
+										{
+											"name": "/api/v1/Interview/GetInterviews",
+											"request": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{base_url}}/api/v1/Interview/GetInterviews?pageNumber={{page_number}}&pageSize={{page_size}}",
+													"host": [
+														"{{base_url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"Interview",
+														"GetInterviews"
+													],
+													"query": [
+														{
+															"key": "pageNumber",
+															"value": "{{page_number}}"
+														},
+														{
+															"key": "pageSize",
+															"value": "{{page_size}}"
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "Success",
+													"originalRequest": {
+														"method": "GET",
+														"header": [],
+														"url": {
+															"raw": "{{base_url}}/api/v1/Interview/GetInterviews?pageNumber={{page_number}}&pageSize={{page_size}}",
+															"host": [
+																"{{base_url}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"Interview",
+																"GetInterviews"
+															],
+															"query": [
+																{
+																	"key": "pageNumber",
+																	"value": "{{page_number}}"
+																},
+																{
+																	"key": "pageSize",
+																	"value": "{{page_size}}"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "transfer-encoding",
+															"value": "chunked"
+														},
+														{
+															"key": "content-type",
+															"value": "application/json; charset=utf-8"
+														},
+														{
+															"key": "server",
+															"value": "Microsoft-IIS/10.0"
+														},
+														{
+															"key": "x-powered-by",
+															"value": "ASP.NET"
+														},
+														{
+															"key": "date",
+															"value": "Mon, 26 Aug 2024 14:21:19 GMT"
+														},
+														{
+															"key": "set-cookie",
+															"value": "SERVERID=WEB2|ZsyPc|ZsyPc; path=/"
+														},
+														{
+															"key": "cache-control",
+															"value": "private"
+														}
+													],
+													"cookie": [],
+													"body": "{\n    \"data\": {\n        \"items\": [\n            {\n                \"id\": 8,\n                \"hireStepId\": 879,\n                \"applicationId\": 132,\n                \"submitterOperatorId\": 5,\n                \"cancellationSubmitterOperatorId\": 10,\n                \"addressId\": 2,\n                \"onlineInterviewId\": 38,\n                \"interviewDescription\": null,\n                \"cancellationReasonId\": 551,\n                \"cancellationDescription\": null,\n                \"statusId\": 22,\n                \"interviewDate\": \"2021-12-28T00:00:00\",\n                \"startTime\": \"09:00:00\",\n                \"endTime\": \"09:30:00\",\n                \"submitTime\": \"2021-12-27T11:01:53.3085764\",\n                \"lastEditTime\": \"2022-01-24 13:46:35.0027787\",\n                \"cancellationTime\": \"2021-12-29 11:36:10.4750995\"\n            }\n        ],\n        \"totalItems\": 1716,\n        \"totalPages\": 172,\n        \"currentPage\": 1,\n        \"nextPage\": 2,\n        \"previousPage\": null\n    },\n    \"succeed\": true,\n    \"statusCode\": 0,\n    \"message\": null\n}"
+												}
+											]
+										}
+									]
+								},
+								{
+									"name": "GetInterviewers",
+									"item": [
+										{
+											"name": "/api/v1/Interview/GetInterviewers",
+											"request": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{base_url}}/api/v1/Interview/GetInterviewers?pageNumber={{page_number}}&pageSize={{page_size}}",
+													"host": [
+														"{{base_url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"Interview",
+														"GetInterviewers"
+													],
+													"query": [
+														{
+															"key": "pageNumber",
+															"value": "{{page_number}}"
+														},
+														{
+															"key": "pageSize",
+															"value": "{{page_size}}"
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "Success",
+													"originalRequest": {
+														"method": "GET",
+														"header": [],
+														"url": {
+															"raw": "{{base_url}}/api/v1/Interview/GetInterviewers?pageNumber={{page_number}}&pageSize={{page_size}}",
+															"host": [
+																"{{base_url}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"Interview",
+																"GetInterviewers"
+															],
+															"query": [
+																{
+																	"key": "pageNumber",
+																	"value": "{{page_number}}"
+																},
+																{
+																	"key": "pageSize",
+																	"value": "{{page_size}}"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "transfer-encoding",
+															"value": "chunked"
+														},
+														{
+															"key": "content-type",
+															"value": "application/json; charset=utf-8"
+														},
+														{
+															"key": "server",
+															"value": "Microsoft-IIS/10.0"
+														},
+														{
+															"key": "x-powered-by",
+															"value": "ASP.NET"
+														},
+														{
+															"key": "date",
+															"value": "Mon, 26 Aug 2024 14:22:03 GMT"
+														},
+														{
+															"key": "set-cookie",
+															"value": "SERVERID=WEB2|ZsyPn|ZsyPc; path=/"
+														},
+														{
+															"key": "cache-control",
+															"value": "private"
+														}
+													],
+													"cookie": [],
+													"body": "{\n    \"data\": {\n        \"items\": [\n            {\n                \"id\": 12,\n                \"interviewId\": 8,\n                \"operatorId\": 6,\n                \"isNeedToSendNotification\": false\n            },\n            {\n                \"id\": 13,\n                \"interviewId\": 8,\n                \"operatorId\": 5,\n                \"isNeedToSendNotification\": false\n            },\n            {\n                \"id\": 14,\n                \"interviewId\": 9,\n                \"operatorId\": 5,\n                \"isNeedToSendNotification\": false\n            },\n            {\n                \"id\": 15,\n                \"interviewId\": 10,\n                \"operatorId\": 6,\n                \"isNeedToSendNotification\": false\n            },\n            {\n                \"id\": 17,\n                \"interviewId\": 42,\n                \"operatorId\": 5,\n                \"isNeedToSendNotification\": false\n            },\n            {\n                \"id\": 18,\n                \"interviewId\": 1160,\n                \"operatorId\": 5,\n                \"isNeedToSendNotification\": false\n            },\n            {\n                \"id\": 19,\n                \"interviewId\": 1161,\n                \"operatorId\": 5,\n                \"isNeedToSendNotification\": false\n            },\n            {\n                \"id\": 21,\n                \"interviewId\": 1162,\n                \"operatorId\": 5,\n                \"isNeedToSendNotification\": false\n            },\n            {\n                \"id\": 22,\n                \"interviewId\": 1129,\n                \"operatorId\": 5,\n                \"isNeedToSendNotification\": false\n            },\n            {\n                \"id\": 25,\n                \"interviewId\": 1163,\n                \"operatorId\": 5,\n                \"isNeedToSendNotification\": false\n            }\n        ],\n        \"totalItems\": 1750,\n        \"totalPages\": 175,\n        \"currentPage\": 1,\n        \"nextPage\": 2,\n        \"previousPage\": null\n    },\n    \"succeed\": true,\n    \"statusCode\": 0,\n    \"message\": null\n}"
+												}
+											]
+										}
+									]
+								},
+								{
+									"name": "GetOnlineInterviews",
+									"item": [
+										{
+											"name": "/api/v1/Interview/GetOnlineInterviews",
+											"request": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{base_url}}/api/v1/Interview/GetOnlineInterviews?pageNumber={{page_number}}&pageSize={{page_size}}",
+													"host": [
+														"{{base_url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"Interview",
+														"GetOnlineInterviews"
+													],
+													"query": [
+														{
+															"key": "pageNumber",
+															"value": "{{page_number}}"
+														},
+														{
+															"key": "pageSize",
+															"value": "{{page_size}}"
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "Success",
+													"originalRequest": {
+														"method": "GET",
+														"header": [],
+														"url": {
+															"raw": "{{base_url}}/api/v1/Interview/GetOnlineInterviews?pageNumber={{page_number}}&pageSize={{page_size}}",
+															"host": [
+																"{{base_url}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"Interview",
+																"GetOnlineInterviews"
+															],
+															"query": [
+																{
+																	"key": "pageNumber",
+																	"value": "{{page_number}}"
+																},
+																{
+																	"key": "pageSize",
+																	"value": "{{page_size}}"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "transfer-encoding",
+															"value": "chunked"
+														},
+														{
+															"key": "content-type",
+															"value": "application/json; charset=utf-8"
+														},
+														{
+															"key": "server",
+															"value": "Microsoft-IIS/10.0"
+														},
+														{
+															"key": "x-powered-by",
+															"value": "ASP.NET"
+														},
+														{
+															"key": "date",
+															"value": "Mon, 26 Aug 2024 14:22:38 GMT"
+														},
+														{
+															"key": "set-cookie",
+															"value": "SERVERID=WEB2|ZsyPw|ZsyPc; path=/"
+														},
+														{
+															"key": "cache-control",
+															"value": "private"
+														}
+													],
+													"cookie": [],
+													"body": "{\n    \"data\": {\n        \"items\": [\n            {\n                \"id\": 6,\n                \"roomId\": 2826948,\n                \"roomUrl\": \"https://www.skyroom.online/ch/hrcando/-8681345-/t/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0eXBlIjoiYXBpX2xvZ2luIiwiZXhwIjoxNjQyNTA3NzA2LCJyb29tX2lkIjoyODI2OTQ4LCJ1aWQiOiJAYXBpXC91c2VyIiwibmlja25hbWUiOiJ1c2VyIiwicm9sZSI6MywiY29uY3VycmVudCI6NSwiZ2VuZGVyIjowfQ.AM_D4-T7SaX0-snxg4-HbjLt-L8RHJ2O84t51qLvQjw/l/fa\",\n                \"isDeleted\": false,\n                \"submitTime\": \"2022-01-18T15:38:53.6709829\",\n                \"platformId\": 0\n            },\n            {\n                \"id\": 9,\n                \"roomId\": 0,\n                \"roomUrl\": \"https://meet.google.com/qce-iriz\",\n                \"isDeleted\": false,\n                \"submitTime\": \"2022-01-20T14:19:04.0324714\",\n                \"platformId\": 3\n            }\n        ],\n        \"totalItems\": 531,\n        \"totalPages\": 54,\n        \"currentPage\": 1,\n        \"nextPage\": 2,\n        \"previousPage\": null\n    },\n    \"succeed\": true,\n    \"statusCode\": 0,\n    \"message\": null\n}"
+												}
+											]
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "Job",
+							"item": [
+								{
+									"name": "GetJobs",
+									"item": [
+										{
+											"name": "/api/v1/Job/GetJobs",
+											"request": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{base_url}}/api/v1/Job/GetJobs?pageNumber={{page_number}}&pageSize={{page_size}}",
+													"host": [
+														"{{base_url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"Job",
+														"GetJobs"
+													],
+													"query": [
+														{
+															"key": "pageNumber",
+															"value": "{{page_number}}"
+														},
+														{
+															"key": "pageSize",
+															"value": "{{page_size}}"
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "Success",
+													"originalRequest": {
+														"method": "GET",
+														"header": [],
+														"url": {
+															"raw": "{{base_url}}/api/v1/Job/GetJobs?pageNumber={{page_number}}&pageSize={{page_size}}",
+															"host": [
+																"{{base_url}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"Job",
+																"GetJobs"
+															],
+															"query": [
+																{
+																	"key": "pageNumber",
+																	"value": "{{page_number}}"
+																},
+																{
+																	"key": "pageSize",
+																	"value": "{{page_size}}"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "transfer-encoding",
+															"value": "chunked"
+														},
+														{
+															"key": "content-type",
+															"value": "application/json; charset=utf-8"
+														},
+														{
+															"key": "server",
+															"value": "Microsoft-IIS/10.0"
+														},
+														{
+															"key": "x-powered-by",
+															"value": "ASP.NET"
+														},
+														{
+															"key": "date",
+															"value": "Mon, 26 Aug 2024 14:23:14 GMT"
+														},
+														{
+															"key": "set-cookie",
+															"value": "SERVERID=WEB2|ZsyP5|ZsyPc; path=/"
+														},
+														{
+															"key": "cache-control",
+															"value": "private"
+														}
+													],
+													"cookie": [],
+													"body": "{\n    \"data\": {\n        \"items\": [\n            {\n                \"id\": 21,\n                \"title\": \"توسعه دهنده انگولار\",\n                \"jobCategoryId\": 23,\n                \"departmentId\": 5,\n                \"addressId\": 22,\n                \"workTypeId\": 1,\n                \"preferredGenderId\": 2,\n                \"seniorityLevelId\": 4,\n                \"minAge\": 3,\n                \"maxAge\": 16,\n                \"isRemote\": false,\n                \"salaryCanBeShow\": true,\n                \"requiredExperienceYear\": 1,\n                \"description\": \"<div>\\n<p><span style=\\\"font-size: 12pt;\\\">در کنار هم ما میخواهیم یکی از برترین ارایه دهندگان سرویس نوبت دهی آن لاین با بیشترین یوزر دائم باشیم. اگر شما سابقه کار بعنوان برنامه نویس ارشد Front-end را دارید و به دنبال گسترش دانش و روبرویی با چالش&zwnj;های برنامه نویسی هستید و میخواهید توانایی&zwnj;های خود را در زمینه برنامه ریزی و تصمیم گیری، کمک به هم تیمی هایتان برای رشد و توسعه فردی آزمایش نموده و مهارت&zwnj;های لازم را برای به عهده گرفتن شغل سرپرستی در آینده نزدیک فرا گیرید، ما بسیار از آشنایی و همکاری با شما خوشحال خواهیم شد.</span></p>\\n<br>\\n<p><span style=\\\"font-size: 14pt;\\\"><strong>شرایط احراز:</strong></span></p>\\n<p><span style=\\\"font-size: 12pt;\\\">ویژگی هایی که ما به دنبال آن هستیم:</span></p>\\n<p><span style=\\\"font-size: 12pt;\\\">مهارت و تجربه تخصصی مورد نیاز:</span></p>\\n<ul>\\n<li><span style=\\\"font-size: 12pt;\\\">تسلط کامل به React و Next.</span></li>\\n<li><span style=\\\"font-size: 12pt;\\\">تسلط کامل به Redux و React Hooks.</span></li>\\n<li><span style=\\\"font-size: 12pt;\\\">تسلط به HTML ،CSS ،JS و عملکرد مرورگرهای مختلف.</span></li>\\n<li><span style=\\\"font-size: 12pt;\\\">توانایی کار با CSS و ترجیحا SCSS به صورت Pure.</span></li>\\n<li><span style=\\\"font-size: 12pt;\\\">توانائی کار با ابزارهای اتوماسیون از جمله Webpack, Rollup ، PostCSS و دیگر ابزارهای مرتبط با توسعه اپلیکیشن فرانت اند.</span></li>\\n<li><span style=\\\"font-size: 12pt;\\\">تسلط به Git.</span></li>\\n<li><span style=\\\"font-size: 12pt;\\\">تسلط به طراحی ریسپانسیو و پشتیبانی از مرورگرهای مختلف.</span></li>\\n<li><span style=\\\"font-size: 12pt;\\\">آشنائی با PWA.</span></li>\\n<li><span style=\\\"font-size: 12pt;\\\">تسلط نسبی به زبان انگلیسی.</span></li>\\n</ul>\\n<p><span style=\\\"font-size: 12pt;\\\">مهارت&zwnj;های عمومی:</span></p>\\n<ul>\\n<li><span style=\\\"font-size: 12pt;\\\">مشتاق به یادگیری و کار با تکنولوژی&zwnj;های جدید.</span></li>\\n<li><span style=\\\"font-size: 12pt;\\\">توانایی انجام کار گروهی.</span></li>\\n<li><span style=\\\"font-size: 12pt;\\\">توانایی درک مسئله و ارائه راه حل.</span></li>\\n<li><span style=\\\"font-size: 12pt;\\\">دارا بودن مهارت ارتباطی بالا.</span></li>\\n<li><span style=\\\"font-size: 12pt;\\\">توجه به جزئیات.</span></li>\\n</ul>\\n<p><span style=\\\"font-size: 12pt;\\\">مهارت&zwnj;هایی که مزیت محسوب می&zwnj;شوند:</span></p>\\n<ul>\\n<li><span style=\\\"font-size: 12pt;\\\">سابقه توسعه اپلیکیشن موبایل با React Native.</span></li>\\n<li><span style=\\\"font-size: 12pt;\\\">سابقه کار در انجام پروژه در زمینه سیستمهای نوبت دهی.</span></li>\\n<li><span style=\\\"font-size: 12pt;\\\">آشنایی با ابزار&zwnj;های تست نویسی مانند Jest.</span></li>\\n<li><span style=\\\"font-size: 12pt;\\\">آشنایی با TypeScript.</span></li>\\n</ul>\\n<br>\\n<p><span style=\\\"font-size: 14pt;\\\"><strong>شایستگی&zwnj;ها:</strong></span></p>\\n<p><span style=\\\"font-size: 12pt;\\\"><strong>وظایف و مسؤلیت&zwnj;ها:</strong></span><br dir=\\\"auto\\\"><span style=\\\"font-size: 12pt;\\\">● استفاده از React.jsو Next.js به عنوان ابزار اصلی برای نگهداشت سایت و وب اپلیکیشن&zwnj;ها.</span><br dir=\\\"auto\\\"><span style=\\\"font-size: 12pt;\\\">● همکاری با تیم&zwnj;های بک اند، دیزاین و محصول برای افزودن قابلیت&zwnj;های جدید به سایت و وب اپلیکیشن&zwnj;ها.</span><br dir=\\\"auto\\\"><span style=\\\"font-size: 12pt;\\\">● طراحی و بهینه&zwnj;سازی کامپوننتها برای بهترین استفاده مجدد.</span><br dir=\\\"auto\\\"><span style=\\\"font-size: 12pt;\\\">● بهینه سازی طراحی و عملکرد UI و UX.</span><br dir=\\\"auto\\\"><span style=\\\"font-size: 12pt;\\\">● راهنمایی فنی به سایر هم تیمی&zwnj;ها.</span></p>\\n</div>\",\n                \"conditions\": \"\",\n                \"managementNotes\": \"بعد از مصاحبه تلفنی یک جلسه اولیه با خودم تسک جلسه با محمد\",\n                \"workingDays\": \"شنبه تا چهارشنبه\",\n                \"requirements\": \"\",\n                \"submitterOperatorId\": 5,\n                \"submitTime\": \"2021-11-29T09:31:00\",\n                \"lastEditTime\": \"2022-09-24T15:28:25.904\",\n                \"closedTime\": null,\n                \"publishTime\": null,\n                \"lastActivityTime\": \"2022-09-24T15:28:25.904\",\n                \"statusId\": 4,\n                \"minSalary\": 35,\n                \"maxSalary\": 45,\n                \"languageId\": 1,\n                \"branchId\": 1\n            }       ],\n        \"totalItems\": 895,\n        \"totalPages\": 90,\n        \"currentPage\": 1,\n        \"nextPage\": 2,\n        \"previousPage\": null\n    },\n    \"succeed\": true,\n    \"statusCode\": 0,\n    \"message\": null\n}"
+												}
+											]
+										}
+									]
+								},
+								{
+									"name": "GetHireSteps",
+									"item": [
+										{
+											"name": "/api/v1/Job/GetHireSteps",
+											"request": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{base_url}}/api/v1/Job/GetHireSteps?pageNumber={{page_number}}&pageSize={{page_size}}",
+													"host": [
+														"{{base_url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"Job",
+														"GetHireSteps"
+													],
+													"query": [
+														{
+															"key": "pageNumber",
+															"value": "{{page_number}}"
+														},
+														{
+															"key": "pageSize",
+															"value": "{{page_size}}"
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "Success",
+													"originalRequest": {
+														"method": "GET",
+														"header": [],
+														"url": {
+															"raw": "{{base_url}}/api/v1/Job/GetHireSteps?pageNumber={{page_number}}&pageSize={{page_size}}",
+															"host": [
+																"{{base_url}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"Job",
+																"GetHireSteps"
+															],
+															"query": [
+																{
+																	"key": "pageNumber",
+																	"value": "{{page_number}}"
+																},
+																{
+																	"key": "pageSize",
+																	"value": "{{page_size}}"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "transfer-encoding",
+															"value": "chunked"
+														},
+														{
+															"key": "content-type",
+															"value": "application/json; charset=utf-8"
+														},
+														{
+															"key": "server",
+															"value": "Microsoft-IIS/10.0"
+														},
+														{
+															"key": "x-powered-by",
+															"value": "ASP.NET"
+														},
+														{
+															"key": "date",
+															"value": "Mon, 26 Aug 2024 14:28:15 GMT"
+														},
+														{
+															"key": "set-cookie",
+															"value": "SERVERID=WEB3|ZsyRI|ZsyRI; path=/"
+														},
+														{
+															"key": "cache-control",
+															"value": "private"
+														}
+													],
+													"cookie": [],
+													"body": "{\n    \"data\": {\n        \"items\": [\n            {\n                \"id\": 1,\n                \"title\": \"ورودی\",\n                \"hireStepSubCategoryId\": 1,\n                \"jobId\": 4,\n                \"displayOrder\": 1,\n                \"isDeleted\": false\n            },\n            {\n                \"id\": 3,\n                \"title\": \"ارزيابي رزومه\",\n                \"hireStepSubCategoryId\": 3,\n                \"jobId\": 4,\n                \"displayOrder\": 2,\n                \"isDeleted\": false\n            },\n            {\n                \"id\": 4,\n                \"title\": \"ارزيابي اوليه تلفني\",\n                \"hireStepSubCategoryId\": 4,\n                \"jobId\": 4,\n                \"displayOrder\": 3,\n                \"isDeleted\": false\n            },\n            {\n                \"id\": 5,\n                \"title\": \"ارزيابي تخصصي\",\n                \"hireStepSubCategoryId\": 5,\n                \"jobId\": 4,\n                \"displayOrder\": 4,\n                \"isDeleted\": false\n            },\n            {\n                \"id\": 6,\n                \"title\": \"ارزيابي HR\",\n                \"hireStepSubCategoryId\": 6,\n                \"jobId\": 4,\n                \"displayOrder\": 5,\n                \"isDeleted\": false\n            },\n            {\n                \"id\": 7,\n                \"title\": \"ارزيابي مديريت\",\n                \"hireStepSubCategoryId\": 7,\n                \"jobId\": 4,\n                \"displayOrder\": 6,\n                \"isDeleted\": false\n            },\n            {\n                \"id\": 8,\n                \"title\": \"تست عملي\",\n                \"hireStepSubCategoryId\": 8,\n                \"jobId\": 4,\n                \"displayOrder\": 7,\n                \"isDeleted\": false\n            },\n            {\n                \"id\": 9,\n                \"title\": \"ارائه پيشنهاد\",\n                \"hireStepSubCategoryId\": 9,\n                \"jobId\": 4,\n                \"displayOrder\": 9,\n                \"isDeleted\": false\n            },\n            {\n                \"id\": 10,\n                \"title\": \"استخدام شده\",\n                \"hireStepSubCategoryId\": 10,\n                \"jobId\": 4,\n                \"displayOrder\": 10,\n                \"isDeleted\": false\n            },\n            {\n                \"id\": 11,\n                \"title\": \"ساير\",\n                \"hireStepSubCategoryId\": 11,\n                \"jobId\": 4,\n                \"displayOrder\": 8,\n                \"isDeleted\": false\n            }\n        ],\n        \"totalItems\": 5574,\n        \"totalPages\": 558,\n        \"currentPage\": 1,\n        \"nextPage\": 2,\n        \"previousPage\": null\n    },\n    \"succeed\": true,\n    \"statusCode\": 0,\n    \"message\": null\n}"
+												}
+											]
+										}
+									]
+								},
+								{
+									"name": "GetHireStepSubCategories",
+									"item": [
+										{
+											"name": "/api/v1/Job/GetHireStepSubCategories",
+											"request": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{base_url}}/api/v1/Job/GetHireStepSubCategories?pageNumber={{page_number}}&pageSize={{page_size}}",
+													"host": [
+														"{{base_url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"Job",
+														"GetHireStepSubCategories"
+													],
+													"query": [
+														{
+															"key": "pageNumber",
+															"value": "{{page_number}}"
+														},
+														{
+															"key": "pageSize",
+															"value": "{{page_size}}"
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "Success",
+													"originalRequest": {
+														"method": "GET",
+														"header": [],
+														"url": {
+															"raw": "{{base_url}}/api/v1/Job/GetHireStepSubCategories?pageNumber={{page_number}}&pageSize={{page_size}}",
+															"host": [
+																"{{base_url}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"Job",
+																"GetHireStepSubCategories"
+															],
+															"query": [
+																{
+																	"key": "pageNumber",
+																	"value": "{{page_number}}"
+																},
+																{
+																	"key": "pageSize",
+																	"value": "{{page_size}}"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "transfer-encoding",
+															"value": "chunked"
+														},
+														{
+															"key": "content-type",
+															"value": "application/json; charset=utf-8"
+														},
+														{
+															"key": "server",
+															"value": "Microsoft-IIS/10.0"
+														},
+														{
+															"key": "x-powered-by",
+															"value": "ASP.NET"
+														},
+														{
+															"key": "date",
+															"value": "Mon, 26 Aug 2024 14:28:49 GMT"
+														},
+														{
+															"key": "set-cookie",
+															"value": "SERVERID=WEB3|ZsyRQ|ZsyRI; path=/"
+														},
+														{
+															"key": "cache-control",
+															"value": "private"
+														}
+													],
+													"cookie": [],
+													"body": "{\n    \"data\": {\n        \"items\": [\n            {\n                \"id\": 1,\n                \"hireStepCategoryId\": 1,\n                \"title\": \"ورودی\"\n            },\n            {\n                \"id\": 3,\n                \"hireStepCategoryId\": 2,\n                \"title\": \"ارزيابي رزومه\"\n            },\n            {\n                \"id\": 4,\n                \"hireStepCategoryId\": 2,\n                \"title\": \"ارزيابي اوليه تلفني\"\n            },\n            {\n                \"id\": 5,\n                \"hireStepCategoryId\": 2,\n                \"title\": \"ارزيابي تخصصي\"\n            },\n            {\n                \"id\": 6,\n                \"hireStepCategoryId\": 2,\n                \"title\": \"ارزيابي HR\"\n            },\n            {\n                \"id\": 7,\n                \"hireStepCategoryId\": 2,\n                \"title\": \"ارزيابي مديريت\"\n            },\n            {\n                \"id\": 8,\n                \"hireStepCategoryId\": 2,\n                \"title\": \"تست عملي\"\n            },\n            {\n                \"id\": 9,\n                \"hireStepCategoryId\": 3,\n                \"title\": \"ارائه پيشنهاد\"\n            },\n            {\n                \"id\": 10,\n                \"hireStepCategoryId\": 4,\n                \"title\": \"استخدام شده\"\n            },\n            {\n                \"id\": 11,\n                \"hireStepCategoryId\": 2,\n                \"title\": \"ساير\"\n            }\n        ],\n        \"totalItems\": 10,\n        \"totalPages\": 1,\n        \"currentPage\": 1,\n        \"nextPage\": null,\n        \"previousPage\": null\n    },\n    \"succeed\": true,\n    \"statusCode\": 0,\n    \"message\": null\n}"
+												}
+											]
+										}
+									]
+								},
+								{
+									"name": "GetJobLogs",
+									"item": [
+										{
+											"name": "/api/v1/Job/GetJobLogs",
+											"request": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{base_url}}/api/v1/Job/GetJobLogs?pageNumber={{page_number}}&pageSize={{page_size}}",
+													"host": [
+														"{{base_url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"Job",
+														"GetJobLogs"
+													],
+													"query": [
+														{
+															"key": "pageNumber",
+															"value": "{{page_number}}"
+														},
+														{
+															"key": "pageSize",
+															"value": "{{page_size}}"
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "Success",
+													"originalRequest": {
+														"method": "GET",
+														"header": [],
+														"url": {
+															"raw": "{{base_url}}/api/v1/Job/GetJobLogs?pageNumber={{page_number}}&pageSize={{page_size}}",
+															"host": [
+																"{{base_url}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"Job",
+																"GetJobLogs"
+															],
+															"query": [
+																{
+																	"key": "pageNumber",
+																	"value": "{{page_number}}"
+																},
+																{
+																	"key": "pageSize",
+																	"value": "{{page_size}}"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "transfer-encoding",
+															"value": "chunked"
+														},
+														{
+															"key": "content-type",
+															"value": "application/json; charset=utf-8"
+														},
+														{
+															"key": "server",
+															"value": "Microsoft-IIS/10.0"
+														},
+														{
+															"key": "x-powered-by",
+															"value": "ASP.NET"
+														},
+														{
+															"key": "date",
+															"value": "Mon, 26 Aug 2024 14:29:18 GMT"
+														},
+														{
+															"key": "set-cookie",
+															"value": "SERVERID=WEB3|ZsyRY|ZsyRI; path=/"
+														},
+														{
+															"key": "cache-control",
+															"value": "private"
+														}
+													],
+													"cookie": [],
+													"body": "{\n    \"data\": {\n        \"items\": [\n            {\n                \"id\": 1,\n                \"jobId\": 483,\n                \"fromStatusId\": 2,\n                \"toStatusId\": 1,\n                \"submitterOperatorId\": 17,\n                \"submitTime\": \"2022-07-03T12:01:08.6032122\"\n            },\n            {\n                \"id\": 2,\n                \"jobId\": 483,\n                \"fromStatusId\": 1,\n                \"toStatusId\": 1,\n                \"submitterOperatorId\": 17,\n                \"submitTime\": \"2022-07-03T12:01:09.5524707\"\n            },\n            {\n                \"id\": 3,\n                \"jobId\": 483,\n                \"fromStatusId\": 1,\n                \"toStatusId\": 2,\n                \"submitterOperatorId\": 17,\n                \"submitTime\": \"2022-07-03T12:01:10.8509037\"\n            },\n            {\n                \"id\": 4,\n                \"jobId\": 483,\n                \"fromStatusId\": 2,\n                \"toStatusId\": 2,\n                \"submitterOperatorId\": 17,\n                \"submitTime\": \"2022-07-03T12:01:12.7746029\"\n            },\n            {\n                \"id\": 5,\n                \"jobId\": 483,\n                \"fromStatusId\": 2,\n                \"toStatusId\": 4,\n                \"submitterOperatorId\": 17,\n                \"submitTime\": \"2022-07-03T12:01:26.3167719\"\n            },\n            {\n                \"id\": 6,\n                \"jobId\": 484,\n                \"fromStatusId\": null,\n                \"toStatusId\": 16,\n                \"submitterOperatorId\": 17,\n                \"submitTime\": \"2022-07-03T12:01:31.2070207\"\n            },\n            {\n                \"id\": 7,\n                \"jobId\": 479,\n                \"fromStatusId\": 1,\n                \"toStatusId\": 2,\n                \"submitterOperatorId\": 17,\n                \"submitTime\": \"2022-07-03T12:01:56.1159915\"\n            },\n            {\n                \"id\": 8,\n                \"jobId\": 482,\n                \"fromStatusId\": 1,\n                \"toStatusId\": 2,\n                \"submitterOperatorId\": 17,\n                \"submitTime\": \"2022-07-03T12:02:37.1441143\"\n            },\n            {\n                \"id\": 9,\n                \"jobId\": 486,\n                \"fromStatusId\": null,\n                \"toStatusId\": 16,\n                \"submitterOperatorId\": 18,\n                \"submitTime\": \"2022-07-03T12:22:35.369741\"\n            },\n            {\n                \"id\": 10,\n                \"jobId\": 486,\n                \"fromStatusId\": 16,\n                \"toStatusId\": 1,\n                \"submitterOperatorId\": 18,\n                \"submitTime\": \"2022-07-03T12:25:38.1520076\"\n            }\n        ],\n        \"totalItems\": 891,\n        \"totalPages\": 90,\n        \"currentPage\": 1,\n        \"nextPage\": 2,\n        \"previousPage\": null\n    },\n    \"succeed\": true,\n    \"statusCode\": 0,\n    \"message\": null\n}"
+												}
+											]
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "Operator",
+							"item": [
+								{
+									"name": "GetOperators",
+									"item": [
+										{
+											"name": "GetOperators",
+											"request": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{base_url}}/api/v1/Operator/GetOperators?pageNumber={{page_number}}&pageSize={{page_size}}",
+													"host": [
+														"{{base_url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"Operator",
+														"GetOperators"
+													],
+													"query": [
+														{
+															"key": "pageNumber",
+															"value": "{{page_number}}"
+														},
+														{
+															"key": "pageSize",
+															"value": "{{page_size}}"
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "Success",
+													"originalRequest": {
+														"method": "GET",
+														"header": [],
+														"url": {
+															"raw": "{{base_url}}/api/v1/Operator/GetOperators?pageNumber={{page_number}}&pageSize={{page_size}}",
+															"host": [
+																"{{base_url}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"Operator",
+																"GetOperators"
+															],
+															"query": [
+																{
+																	"key": "pageNumber",
+																	"value": "{{page_number}}"
+																},
+																{
+																	"key": "pageSize",
+																	"value": "{{page_size}}"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "transfer-encoding",
+															"value": "chunked"
+														},
+														{
+															"key": "content-type",
+															"value": "application/json; charset=utf-8"
+														},
+														{
+															"key": "server",
+															"value": "Microsoft-IIS/10.0"
+														},
+														{
+															"key": "x-powered-by",
+															"value": "ASP.NET"
+														},
+														{
+															"key": "date",
+															"value": "Mon, 26 Aug 2024 15:01:25 GMT"
+														},
+														{
+															"key": "set-cookie",
+															"value": "SERVERID=WEB2|ZsyY1|ZsyYu; path=/"
+														},
+														{
+															"key": "cache-control",
+															"value": "private"
+														}
+													],
+													"cookie": [],
+													"body": "{\n    \"data\": {\n        \"items\": [\n            {\n                \"userGuid\": \"9f425d29-283c-40a6-bd11-78a58e33b423\",\n                \"id\": 15,\n                \"fullName\": \"میلاد قربانی\",\n                \"fullNameEn\": \"Milad Ghorbani\",\n                \"submitTime\": \"2022-02-01T16:49:25.646\",\n                \"submitterOperatorId\": 5,\n                \"userEmail\": \"milad@gmail.com\",\n                \"phoneNumber\": \"09909328611\",\n                \"statusId\": 31,\n                \"languageId\": 1\n            }\n        ],\n        \"totalItems\": 226,\n        \"totalPages\": 23,\n        \"currentPage\": 1,\n        \"nextPage\": 2,\n        \"previousPage\": null\n    },\n    \"succeed\": true,\n    \"statusCode\": 0,\n    \"message\": null\n}"
+												}
+											]
+										}
+									]
+								},
+								{
+									"name": "GetOperatorRoleBranches",
+									"item": [
+										{
+											"name": "Get Operator Role Branches",
+											"request": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{base_url}}/api/v1/Operator/GetOperatorRoleBranches?pageNumber={{page_number}}&pageSize={{page_size}}",
+													"host": [
+														"{{base_url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"Operator",
+														"GetOperatorRoleBranches"
+													],
+													"query": [
+														{
+															"key": "pageNumber",
+															"value": "{{page_number}}"
+														},
+														{
+															"key": "pageSize",
+															"value": "{{page_size}}"
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "Success",
+													"originalRequest": {
+														"method": "GET",
+														"header": [],
+														"url": {
+															"raw": "{{base_url}}/api/v1/Operator/GetOperatorRoleBranches?pageNumber={{page_number}}&pageSize={{page_size}}",
+															"host": [
+																"{{base_url}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"Operator",
+																"GetOperatorRoleBranches"
+															],
+															"query": [
+																{
+																	"key": "pageNumber",
+																	"value": "{{page_number}}"
+																},
+																{
+																	"key": "pageSize",
+																	"value": "{{page_size}}"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "transfer-encoding",
+															"value": "chunked"
+														},
+														{
+															"key": "content-type",
+															"value": "application/json; charset=utf-8"
+														},
+														{
+															"key": "server",
+															"value": "Microsoft-IIS/10.0"
+														},
+														{
+															"key": "x-powered-by",
+															"value": "ASP.NET"
+														},
+														{
+															"key": "date",
+															"value": "Mon, 26 Aug 2024 15:03:43 GMT"
+														},
+														{
+															"key": "set-cookie",
+															"value": "SERVERID=WEB2|ZsyZY|ZsyYu; path=/"
+														},
+														{
+															"key": "cache-control",
+															"value": "private"
+														}
+													],
+													"cookie": [],
+													"body": "{\n    \"data\": {\n        \"items\": [\n            {\n                \"id\": 32,\n                \"operatorId\": 40,\n                \"roleId\": 2,\n                \"branchId\": 1\n            },\n            {\n                \"id\": 35,\n                \"operatorId\": 41,\n                \"roleId\": 2,\n                \"branchId\": 1\n            },\n            {\n                \"id\": 66,\n                \"operatorId\": 48,\n                \"roleId\": 3,\n                \"branchId\": 1\n            },\n            {\n                \"id\": 69,\n                \"operatorId\": 49,\n                \"roleId\": 2,\n                \"branchId\": 1\n            },\n            {\n                \"id\": 113,\n                \"operatorId\": 52,\n                \"roleId\": 1,\n                \"branchId\": 1\n            },\n            {\n                \"id\": 123,\n                \"operatorId\": 54,\n                \"roleId\": 2,\n                \"branchId\": 1\n            },\n            {\n                \"id\": 128,\n                \"operatorId\": 57,\n                \"roleId\": 1,\n                \"branchId\": 1\n            },\n            {\n                \"id\": 129,\n                \"operatorId\": 58,\n                \"roleId\": 1,\n                \"branchId\": 1\n            },\n            {\n                \"id\": 134,\n                \"operatorId\": 60,\n                \"roleId\": 1,\n                \"branchId\": 1\n            },\n            {\n                \"id\": 135,\n                \"operatorId\": 61,\n                \"roleId\": 1,\n                \"branchId\": 1\n            }\n        ],\n        \"totalItems\": 223,\n        \"totalPages\": 23,\n        \"currentPage\": 1,\n        \"nextPage\": 2,\n        \"previousPage\": null\n    },\n    \"succeed\": true,\n    \"statusCode\": 0,\n    \"message\": null\n}"
+												}
+											]
+										}
+									]
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": [
+			{
+				"key": "value",
+				"value": "",
+				"type": "string"
+			},
+			{
+				"key": "key",
+				"value": "CompanyApiKey",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					"pm.request.headers.add({\r",
+					"  key: pm.environment.get('headerKey'),\r",
+					"  value: pm.environment.get('headerValue')\r",
+					"});"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "https://atsedgeapi.hrcando.ir"
+		},
+		{
+			"key": "page_size",
+			"value": "10",
+			"type": "string"
+		},
+		{
+			"key": "page_number",
+			"value": "1",
+			"type": "string"
+		}
+	]
+}
